@@ -13,6 +13,7 @@
 		001417E820158F3000B5055F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001417E620158F3000B5055F /* Main.storyboard */; };
 		001417EA20158F3000B5055F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001417E920158F3000B5055F /* Assets.xcassets */; };
 		001417ED20158F3000B5055F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001417EB20158F3000B5055F /* LaunchScreen.storyboard */; };
+		001417FB2015ED3800B5055F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417FA2015ED3800B5055F /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		001417E920158F3000B5055F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001417EC20158F3000B5055F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001417EE20158F3000B5055F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		001417FA2015ED3800B5055F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		001417DF20158F3000B5055F /* Le Planner */ = {
 			isa = PBXGroup;
 			children = (
+				001417F72015ECF400B5055F /* Model */,
 				001417F42015E90600B5055F /* View */,
 				001417E020158F3000B5055F /* AppDelegate.swift */,
 				001417E220158F3000B5055F /* HomeViewController.swift */,
@@ -73,6 +76,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		001417F72015ECF400B5055F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				001417FA2015ED3800B5055F /* Event.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001417FB2015ED3800B5055F /* Event.swift in Sources */,
 				001417E520158F3000B5055F /* EventsViewController.swift in Sources */,
 				001417E120158F3000B5055F /* AppDelegate.swift in Sources */,
 				001417E320158F3000B5055F /* HomeViewController.swift in Sources */,

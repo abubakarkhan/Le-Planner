@@ -32,6 +32,12 @@ class EventsViewController: UITableViewController {
         cell.textLabel?.text = eventsArray[indexPath.row]
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(eventsArray[indexPath.row])
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
 
