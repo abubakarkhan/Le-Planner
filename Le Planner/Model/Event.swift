@@ -33,5 +33,5 @@ struct Event {
         self.dateTime = dateTime
         self.eventType = eventType
     }
-    
+
 }

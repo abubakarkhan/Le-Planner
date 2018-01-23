@@ -35,13 +35,28 @@ class EventData {
         
         eventList.append(Event(
             title: "Meeting",
-            description: "Meeting Jack",
+            description: "Meeting Jack for rock climbing",
             dateTime: Date(),
-            eventType: EventType.Meeting))
+            eventType: EventType.Leisure))
+        
+        eventList.append(Event(
+            title: "Design Team Meeting",
+            description: "Finalising design mockups",
+            dateTime: Date(),
+            eventType: EventType.Work))
+        
+        eventList.append(Event(
+            title: "Pick up Adam",
+            description: "Pick up Adam at the airport at 10:00 pm",
+            dateTime: Date(),
+            eventType: EventType.Other))
     }
     
     func getEventList() -> Array<Event>{
         return eventList
+    }
+    func addEvent(event: Event){
+        eventList.append(event)
     }
     
 }
