@@ -10,25 +10,37 @@ import Foundation
 
 class EventData {
     
-    var eventList : Array<Event> = []
+    private var eventList : Array<Event> = []
     
-    private static var instance : EventData?
-    
-    static func getInstance() -> EventData {
-        if instance == nil {
-            instance = EventData()
-        }
-        return instance!
-    }
+    static let instance = EventData()
     
     private init(){
-        eventList.append(Event(title: "Yoga class",
-                               description: "Trying out yoga today with John",
-                               date: CLong(NSDate().timeIntervalSince1970*1000),
-                               time: CLong(NSDate().timeIntervalSince1970*1000)))
+        eventList.append(Event(
+            title: "Yoga class",
+            description: "Trying out yoga today with John",
+            date: CLong(NSDate().timeIntervalSince1970*1000),
+            time: CLong(NSDate().timeIntervalSince1970*1000)))
+        
+        eventList.append(Event(
+            title: "IOS Assignmnet 2",
+            description: "Meetup with the team member to discuess the future approach",
+            date: CLong(NSDate().timeIntervalSince1970*1000),
+            time: CLong(NSDate().timeIntervalSince1970*1000)))
+        
+        eventList.append(Event(
+            title: "Coffee Meetup",
+            description: "Meeting John for coffe",
+            date: CLong(NSDate().timeIntervalSince1970*1000),
+            time: CLong(NSDate().timeIntervalSince1970*1000)))
+        
+        eventList.append(Event(
+            title: "Meeting",
+            description: "Meeting Jack",
+            date: CLong(NSDate().timeIntervalSince1970*1000),
+            time: CLong(NSDate().timeIntervalSince1970*1000)))
     }
     
-    private func getEventList() -> Array<Event>{
+    func getEventList() -> Array<Event>{
         return eventList
     }
     
