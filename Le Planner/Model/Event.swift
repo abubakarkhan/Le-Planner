@@ -23,16 +23,14 @@ struct Event {
     static var id : Int = 0
     var title : String
     var description : String
-    var date : CLong
-    var time : CLong
+    var dateTime : Date
     var eventType : EventType
     
-    init(title: String, description: String, date: CLong, time: CLong, eventType: EventType) {
+    init(title: String, description: String, dateTime: Date, eventType: EventType) {
         Event.id += 1
         self.title = title
         self.description = description
-        self.date = date
-        self.time = time
+        self.dateTime = dateTime
         self.eventType = eventType
     }
     

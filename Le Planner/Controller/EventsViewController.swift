@@ -32,8 +32,8 @@ class EventsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Print here fix
-        print(EventData.instance.getEventList()[indexPath.row].title)
-        
+        print(EventData.instance.getEventList()[indexPath.row].dateTime)
+
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

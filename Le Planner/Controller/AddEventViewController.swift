@@ -14,14 +14,14 @@ class AddEventViewController: UIViewController {
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     
-    
+    let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         let datePicker = UIDatePicker()
         
-        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.datePickerMode = UIDatePickerMode.dateAndTime
 
         datePicker.addTarget(self,
                              action: #selector(AddEventViewController.datePickerValueChange(sender:)),
@@ -52,9 +52,11 @@ class AddEventViewController: UIViewController {
     @objc func datePickerValueChange(sender: UIDatePicker){
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = DateFormatter.Style.none
+        formatter.timeStyle = DateFormatter.Style.medium
 
         dateField.text = formatter.string(from: sender.date)
+        
+        print(sender.date)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
