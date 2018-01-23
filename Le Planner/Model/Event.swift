@@ -18,14 +18,14 @@ enum EventType: String {
     case Other
 }
 
-class Event {
+struct Event {
     
     static var id : Int = 0
-    var title : String = ""
-    var description : String = ""
-    var date : CLong = 0
-    var time : CLong = 0
-    var eventType : EventType?
+    var title : String
+    var description : String
+    var date : CLong
+    var time : CLong
+    var eventType : EventType
     
     init(title: String, description: String, date: CLong, time: CLong, eventType: EventType) {
         Event.id += 1
