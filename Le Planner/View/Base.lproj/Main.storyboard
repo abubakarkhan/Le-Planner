@@ -131,6 +131,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UjC-Qe-yhz"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Event" id="ip0-t2-DzT" userLabel="Add Event">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="JtT-eW-AxJ">
+                            <connections>
+                                <action selector="addEventBtn:" destination="JJH-3E-6Hd" id="IVw-NC-pxX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateField" destination="uUt-Fj-rWl" id="WIC-0K-rUZ"/>
                         <outlet property="descField" destination="KYt-Hs-7Dh" id="lY7-tu-yer"/>
