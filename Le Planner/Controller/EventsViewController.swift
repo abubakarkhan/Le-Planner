@@ -25,6 +25,8 @@ class EventsViewController: UITableViewController {
         //cell.textLabel?.text = eventsArray[indexPath.row]
         let event = EventData.instance.getEventList()[indexPath.row]
         cell.textLabel?.text = event.title
+        cell.detailTextLabel?.text = event.description
+        cell.imageView?.image = UIImage(named: (event.eventType?.rawValue)!)
         return cell
     }
     

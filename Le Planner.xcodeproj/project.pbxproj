@@ -41,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000F005A2016BC5700EF9453 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				001417E020158F3000B5055F /* AppDelegate.swift */,
+				001417E220158F3000B5055F /* HomeViewController.swift */,
+				001417E420158F3000B5055F /* EventsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		001417D420158F3000B5055F = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +70,9 @@
 		001417DF20158F3000B5055F /* Le Planner */ = {
 			isa = PBXGroup;
 			children = (
+				000F005A2016BC5700EF9453 /* Controller */,
 				001417F72015ECF400B5055F /* Model */,
 				001417F42015E90600B5055F /* View */,
-				001417E020158F3000B5055F /* AppDelegate.swift */,
-				001417E220158F3000B5055F /* HomeViewController.swift */,
-				001417E420158F3000B5055F /* EventsViewController.swift */,
-				001417E620158F3000B5055F /* Main.storyboard */,
 				001417E920158F3000B5055F /* Assets.xcassets */,
 				001417EE20158F3000B5055F /* Info.plist */,
 			);
@@ -76,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				000F00582016B90F00EF9453 /* LaunchScreen.storyboard */,
+				001417E620158F3000B5055F /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

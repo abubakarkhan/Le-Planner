@@ -19,25 +19,29 @@ class EventData {
             title: "Yoga class",
             description: "Trying out yoga today with John",
             date: CLong(NSDate().timeIntervalSince1970*1000),
-            time: CLong(NSDate().timeIntervalSince1970*1000)))
+            time: CLong(NSDate().timeIntervalSince1970*1000),
+            eventType: EventType.Exercise))
         
         eventList.append(Event(
             title: "IOS Assignmnet 2",
             description: "Meetup with the team member to discuess the future approach",
             date: CLong(NSDate().timeIntervalSince1970*1000),
-            time: CLong(NSDate().timeIntervalSince1970*1000)))
+            time: CLong(NSDate().timeIntervalSince1970*1000),
+            eventType: EventType.Study))
         
         eventList.append(Event(
             title: "Coffee Meetup",
             description: "Meeting John for coffe",
             date: CLong(NSDate().timeIntervalSince1970*1000),
-            time: CLong(NSDate().timeIntervalSince1970*1000)))
+            time: CLong(NSDate().timeIntervalSince1970*1000),
+            eventType: EventType.Meeting))
         
         eventList.append(Event(
             title: "Meeting",
             description: "Meeting Jack",
             date: CLong(NSDate().timeIntervalSince1970*1000),
-            time: CLong(NSDate().timeIntervalSince1970*1000)))
+            time: CLong(NSDate().timeIntervalSince1970*1000),
+            eventType: EventType.Meeting))
     }
     
     func getEventList() -> Array<Event>{
