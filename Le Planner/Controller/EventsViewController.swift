@@ -54,4 +54,29 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         return [deleteAction]
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Date formatter
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.medium
+        
+        //selected event
+        let eventSelected = EventData.instance.getEventList()[indexPath.row]
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let alerBody = eventSelected.description + "\n" +
+            formatter.string(from: eventSelected.dateTime) + "\n" +
+            eventSelected.eventType.rawValue + " Event"
+        
+        let messageAlert = "\n\n *To Delete Entry Swipe Left On Item"
+        
+        let alert = UIAlertController(title: eventSelected.title,
+                                      message: alerBody + messageAlert, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Dimiss", style: UIAlertActionStyle.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
