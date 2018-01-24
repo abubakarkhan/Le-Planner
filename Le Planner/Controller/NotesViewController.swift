@@ -15,13 +15,10 @@ class NotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         notesTableView.dataSource = self
         notesTableView.delegate = self
         notesTableView.tableFooterView = UIView()
     }
-
-
 }
 
 extension NotesViewController: UITableViewDataSource, UITableViewDelegate {

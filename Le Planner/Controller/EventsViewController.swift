@@ -21,6 +21,10 @@ class EventsViewController: UIViewController {
         eventsTableView.tableFooterView = UIView()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        eventsTableView.reloadData()
+    }
 
 
 }

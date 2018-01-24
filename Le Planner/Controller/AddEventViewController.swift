@@ -74,7 +74,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if eventDateTime == nil {
             eventDateTime = Date()
         }
-        //FIx ************************ emtyp string
+        //Optimize for emty strings later ***
         
         EventData.instance.addEvent(event: Event(title: titleField.text!,
                                                  description: descField.text!,
