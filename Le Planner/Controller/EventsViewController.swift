@@ -17,6 +17,9 @@ class EventsViewController: UIViewController {
 
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
+        //hide separator for empty cell
+        eventsTableView.tableFooterView = UIView()
+        
     }
 
 

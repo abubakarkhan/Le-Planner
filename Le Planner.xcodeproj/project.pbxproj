@@ -19,6 +19,8 @@
 		004A7BD920181E65009CD092 /* NotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BD820181E65009CD092 /* NotesData.swift */; };
 		004A7BE52018477D009CD092 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE42018477D009CD092 /* EventCell.swift */; };
 		004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE6201848C6009CD092 /* EventsViewController.swift */; };
+		004A7BE920184CC7009CD092 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE820184CC7009CD092 /* NoteCell.swift */; };
+		004A7BEB20184E58009CD092 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BEA20184E58009CD092 /* NotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		004A7BD820181E65009CD092 /* NotesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesData.swift; sourceTree = "<group>"; };
 		004A7BE42018477D009CD092 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		004A7BE6201848C6009CD092 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		004A7BE820184CC7009CD092 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		004A7BEA20184E58009CD092 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 				001417E220158F3000B5055F /* HomeViewController.swift */,
 				0039528D2016F80500E53E98 /* AddEventViewController.swift */,
 				004A7BE6201848C6009CD092 /* EventsViewController.swift */,
+				004A7BEA20184E58009CD092 /* NotesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				004A7BE42018477D009CD092 /* EventCell.swift */,
+				004A7BE820184CC7009CD092 /* NoteCell.swift */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -191,11 +197,13 @@
 			files = (
 				001417FB2015ED3800B5055F /* Event.swift in Sources */,
 				0039528E2016F80500E53E98 /* AddEventViewController.swift in Sources */,
+				004A7BEB20184E58009CD092 /* NotesViewController.swift in Sources */,
 				001417FD2015F95B00B5055F /* EventData.swift in Sources */,
 				004A7BD720181DF1009CD092 /* Note.swift in Sources */,
 				004A7BE52018477D009CD092 /* EventCell.swift in Sources */,
 				001417E120158F3000B5055F /* AppDelegate.swift in Sources */,
 				001417E320158F3000B5055F /* HomeViewController.swift in Sources */,
+				004A7BE920184CC7009CD092 /* NoteCell.swift in Sources */,
 				004A7BD920181E65009CD092 /* NotesData.swift in Sources */,
 				004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */,
 			);
