@@ -13,7 +13,6 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var dateField: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var eventTypeTextFIeld: UITextField!
     
     let arrayEventType = [EventType.Exercise,
@@ -27,9 +26,13 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var eventDateTime : Date?
     
     override func viewDidLoad() {
+        let pickerView = UIPickerView()
+        
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.isHidden = true
+        
+        
+        eventTypeTextFIeld.inputView = pickerView
         
         super.viewDidLoad()
     
@@ -42,11 +45,11 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         dateField.inputView = datePicker                
     }
     
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arrayEventType.count
     }
     
@@ -56,7 +59,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         eventType = arrayEventType[row]
-        print(arrayEventType[row].rawValue)
+        eventTypeTextFIeld.text = arrayEventType[row].rawValue
     }
     
     @IBAction func addEventBtn(_ sender: Any) {
@@ -97,11 +100,6 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         navigationController?.popViewController(animated: true)
         
         dismiss(animated: true, completion: nil)
-    }
-    @IBAction func chooseEventBtn(_ sender: Any) {
-        if pickerView.isHidden {
-            pickerView.isHidden = false
-        }
     }
     
     @objc func datePickerValueChange(sender: UIDatePicker){
