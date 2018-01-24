@@ -33,4 +33,8 @@ class NotesData {
         notesList.append(note)
     }
     
+    func deleteNote(index: Int) {
+        notesList.remove(at: index)
+    }
+    
 }

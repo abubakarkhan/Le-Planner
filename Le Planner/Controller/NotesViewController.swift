@@ -37,4 +37,13 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+            NotesData.instance.deleteNote(index: indexPath.row)
+            tableView.reloadData()
+        }
+        
+        return [deleteAction]
+    }
+    
 }

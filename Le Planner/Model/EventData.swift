@@ -59,4 +59,8 @@ class EventData {
         eventList.append(event)
     }
     
+    func deleteEvent(index: Int){
+        eventList.remove(at: index)
+    }
+    
 }

@@ -283,7 +283,7 @@
             </objects>
             <point key="canvasLocation" x="748.79999999999995" y="-320.23988005997006"/>
         </scene>
-        <!--Notes View Controller-->
+        <!--Notes-->
         <scene sceneID="VRV-Ck-Gde">
             <objects>
                 <viewController id="Im6-Or-cjO" customClass="NotesViewController" customModule="Le_Planner" customModuleProvider="target" sceneMemberID="viewController">
@@ -345,14 +345,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y7L-SK-voi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="r5a-QT-cgM"/>
+                    <navigationItem key="navigationItem" title="Notes" id="r5a-QT-cgM">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="ytP-jA-LVY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="notesTableView" destination="99u-Ed-7JW" id="Dyl-nQ-gDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaU-oc-kKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="312.80000000000001" y="712.89355322338838"/>
+            <point key="canvasLocation" x="-490" y="1442"/>
         </scene>
         <!--Events-->
         <scene sceneID="o6Z-VS-xry">

@@ -45,4 +45,13 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+            EventData.instance.deleteEvent(index: indexPath.row)
+            tableView.reloadData()
+        }
+        
+        return [deleteAction]
+    }
+    
 }
