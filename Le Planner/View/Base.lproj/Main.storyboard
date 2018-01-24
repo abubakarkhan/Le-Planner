@@ -127,7 +127,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Events" id="faY-sW-BAs">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="5au-gk-wgM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5au-gk-wgM">
                             <connections>
                                 <segue destination="JJH-3E-6Hd" kind="show" id="kN8-fs-C27"/>
                             </connections>
@@ -348,7 +348,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Notes" id="r5a-QT-cgM">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="ytP-jA-LVY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ytP-jA-LVY">
                             <connections>
                                 <segue destination="vEG-sL-cdM" kind="show" id="oAz-il-VyR"/>
                             </connections>
@@ -396,7 +396,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="9Wk-MS-z0n">
-                                        <rect key="frame" x="20" y="112" width="335" height="144"/>
+                                        <rect key="frame" x="20" y="112" width="335" height="159"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -419,7 +419,7 @@
                                     <constraint firstItem="9Wk-MS-z0n" firstAttribute="top" secondItem="CjR-tO-ohy" secondAttribute="bottom" constant="5" id="c4i-xr-0h2"/>
                                     <constraint firstItem="sns-ja-zk2" firstAttribute="leading" secondItem="aAZ-Jb-NBo" secondAttribute="leading" constant="20" id="feu-yo-iUG"/>
                                     <constraint firstItem="CjR-tO-ohy" firstAttribute="top" secondItem="sns-ja-zk2" secondAttribute="bottom" constant="15" id="o5w-px-h1B"/>
-                                    <constraint firstAttribute="bottom" secondItem="9Wk-MS-z0n" secondAttribute="bottom" constant="15" id="qyI-17-zQj"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Wk-MS-z0n" secondAttribute="bottom" id="qyI-17-zQj"/>
                                     <constraint firstItem="9Wk-MS-z0n" firstAttribute="leading" secondItem="aAZ-Jb-NBo" secondAttribute="leading" constant="20" id="qyR-xK-gfF"/>
                                     <constraint firstAttribute="trailing" secondItem="w1b-6j-Nhl" secondAttribute="trailing" constant="20" id="wIi-dJ-tFu"/>
                                 </constraints>

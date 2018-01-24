@@ -63,23 +63,32 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func addEventBtn(_ sender: Any) {
-        var et : EventType?
         
-        if eventType != nil {
-            et = eventType
-        }else{
-            et = EventType.Exercise
-        }
-        
-        if eventDateTime == nil {
-            eventDateTime = Date()
-        }
         //Optimize for emty strings later ***
+        if !(titleField.text?.isEmpty)! &&
+            !(descField.text?.isEmpty)! &&
+            !(dateField.text?.isEmpty)! &&
+            !(eventTypeTextFIeld.text?.isEmpty)!{
+            addNewEvent()
+        }else{
+            eventNotAddedAlert()
+        }
+    }
+    func eventNotAddedAlert(){
+        //Build alert for meeting added
+        let alert = UIAlertController(title: "Failed",
+                                      message: "Your event was not added \nPlease fill in empty fields",
+                                      preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Default action"), style: .`default`, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func addNewEvent(){
         EventData.instance.addEvent(event: Event(title: titleField.text!,
                                                  description: descField.text!,
                                                  dateTime: eventDateTime!,
-                                                 eventType: et!))
+                                                 eventType: eventType!))
         
         //Build alert for meeting added
         let alert = UIAlertController(title: "Event Added",
@@ -90,9 +99,6 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
             self.navigateToPreviousScreen()
         }))
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
     }
     
     func navigateToPreviousScreen(){

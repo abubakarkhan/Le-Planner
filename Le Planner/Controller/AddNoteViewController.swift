@@ -22,31 +22,37 @@ class AddNoteViewController: UIViewController {
     @IBAction func addButton(_ sender: Any) {
         
         if !(noteTitleField.text?.isEmpty)! && !(noteDetailField.text?.isEmpty)!{
-            //add note if fields no blank
-            addNote(title: noteTitleField.text!, body: noteDetailField.text!)
-            
-            //Build alert for meeting added
-            let alert = UIAlertController(title: "Note Added",
-                                          message: "Your note was added",
-                                          preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
-                self.navigateToPreviousScreen()
-            }))
-            self.present(alert, animated: true, completion: nil)
-            
+            newNoteAddedAlert()
         } else {
-            let alert = UIAlertController(title: "Failed",
-                                          message: "Your note was not added. Empty Fields",
-                                          preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss",
-                                                                   comment: "Default action"), style: .`default`, handler: nil))
-            
-            self.present(alert, animated: true, completion: nil)
-            
+            noteNotAddedAlert()
         }
     
+    }
+    
+    func noteNotAddedAlert(){
+        let alert = UIAlertController(title: "Failed",
+                                      message: "Your note was not added \nPlease fill in empty fields",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss",
+                                                               comment: "Default action"), style: .`default`, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func newNoteAddedAlert(){
+        //add note if fields no blank
+        addNote(title: noteTitleField.text!, body: noteDetailField.text!)
+        
+        //Build alert for note added
+        let alert = UIAlertController(title: "Note Added",
+                                      message: "Your note was added",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+            self.navigateToPreviousScreen()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func addNote(title: String, body: String){
