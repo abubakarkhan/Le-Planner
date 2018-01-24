@@ -10,16 +10,15 @@
 		000F00592016B90F00EF9453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000F00582016B90F00EF9453 /* LaunchScreen.storyboard */; };
 		001417E120158F3000B5055F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417E020158F3000B5055F /* AppDelegate.swift */; };
 		001417E320158F3000B5055F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417E220158F3000B5055F /* HomeViewController.swift */; };
-		001417E520158F3000B5055F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417E420158F3000B5055F /* EventsViewController.swift */; };
 		001417E820158F3000B5055F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001417E620158F3000B5055F /* Main.storyboard */; };
 		001417EA20158F3000B5055F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001417E920158F3000B5055F /* Assets.xcassets */; };
 		001417FB2015ED3800B5055F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417FA2015ED3800B5055F /* Event.swift */; };
 		001417FD2015F95B00B5055F /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417FC2015F95B00B5055F /* EventData.swift */; };
 		0039528E2016F80500E53E98 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039528D2016F80500E53E98 /* AddEventViewController.swift */; };
-		004A7BD520181BFF009CD092 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BD420181BFF009CD092 /* NotesCell.swift */; };
 		004A7BD720181DF1009CD092 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BD620181DF1009CD092 /* Note.swift */; };
 		004A7BD920181E65009CD092 /* NotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BD820181E65009CD092 /* NotesData.swift */; };
-		004A7BDB201820E3009CD092 /* NotesTableControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BDA201820E2009CD092 /* NotesTableControllerViewController.swift */; };
+		004A7BE52018477D009CD092 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE42018477D009CD092 /* EventCell.swift */; };
+		004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE6201848C6009CD092 /* EventsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,17 +26,16 @@
 		001417DD20158F3000B5055F /* Le Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Le Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		001417E020158F3000B5055F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		001417E220158F3000B5055F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		001417E420158F3000B5055F /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		001417E720158F3000B5055F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		001417E920158F3000B5055F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001417EE20158F3000B5055F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001417FA2015ED3800B5055F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		001417FC2015F95B00B5055F /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		0039528D2016F80500E53E98 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
-		004A7BD420181BFF009CD092 /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
 		004A7BD620181DF1009CD092 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		004A7BD820181E65009CD092 /* NotesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesData.swift; sourceTree = "<group>"; };
-		004A7BDA201820E2009CD092 /* NotesTableControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableControllerViewController.swift; sourceTree = "<group>"; };
+		004A7BE42018477D009CD092 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		004A7BE6201848C6009CD092 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +52,11 @@
 		000F005A2016BC5700EF9453 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				004A7BCF20181B88009CD092 /* Table Cell */,
+				004A7BE32018445C009CD092 /* Custom Cell */,
 				001417E020158F3000B5055F /* AppDelegate.swift */,
 				001417E220158F3000B5055F /* HomeViewController.swift */,
-				001417E420158F3000B5055F /* EventsViewController.swift */,
 				0039528D2016F80500E53E98 /* AddEventViewController.swift */,
-				004A7BDA201820E2009CD092 /* NotesTableControllerViewController.swift */,
+				004A7BE6201848C6009CD092 /* EventsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,12 +109,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		004A7BCF20181B88009CD092 /* Table Cell */ = {
+		004A7BE32018445C009CD092 /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
-				004A7BD420181BFF009CD092 /* NotesCell.swift */,
+				004A7BE42018477D009CD092 /* EventCell.swift */,
 			);
-			path = "Table Cell";
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,14 +191,13 @@
 			files = (
 				001417FB2015ED3800B5055F /* Event.swift in Sources */,
 				0039528E2016F80500E53E98 /* AddEventViewController.swift in Sources */,
-				001417E520158F3000B5055F /* EventsViewController.swift in Sources */,
 				001417FD2015F95B00B5055F /* EventData.swift in Sources */,
 				004A7BD720181DF1009CD092 /* Note.swift in Sources */,
+				004A7BE52018477D009CD092 /* EventCell.swift in Sources */,
 				001417E120158F3000B5055F /* AppDelegate.swift in Sources */,
 				001417E320158F3000B5055F /* HomeViewController.swift in Sources */,
-				004A7BDB201820E3009CD092 /* NotesTableControllerViewController.swift in Sources */,
-				004A7BD520181BFF009CD092 /* NotesCell.swift in Sources */,
 				004A7BD920181E65009CD092 /* NotesData.swift in Sources */,
+				004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
