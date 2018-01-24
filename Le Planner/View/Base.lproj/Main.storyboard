@@ -365,7 +365,7 @@
         <!--Add Note-->
         <scene sceneID="IYw-vH-j0d">
             <objects>
-                <viewController id="vEG-sL-cdM" sceneMemberID="viewController">
+                <viewController id="vEG-sL-cdM" customClass="AddNoteViewController" customModule="Le_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FQB-Xw-lLS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -439,8 +439,16 @@
                         <viewLayoutGuide key="safeArea" id="jni-On-Nfb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="IkX-NB-EM7">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="yBN-57-TuT"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="yBN-57-TuT">
+                            <connections>
+                                <action selector="addButton:" destination="vEG-sL-cdM" id="b2g-j0-Ytn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteDetailField" destination="9Wk-MS-z0n" id="8UA-Cc-lMG"/>
+                        <outlet property="noteTitleField" destination="sns-ja-zk2" id="cZq-K0-bfn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7b-jw-ONW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

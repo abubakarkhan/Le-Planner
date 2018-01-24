@@ -21,6 +21,7 @@
 		004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE6201848C6009CD092 /* EventsViewController.swift */; };
 		004A7BE920184CC7009CD092 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE820184CC7009CD092 /* NoteCell.swift */; };
 		004A7BEB20184E58009CD092 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BEA20184E58009CD092 /* NotesViewController.swift */; };
+		004A7BED20187DEA009CD092 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BEC20187DEA009CD092 /* AddNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		004A7BE6201848C6009CD092 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		004A7BE820184CC7009CD092 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		004A7BEA20184E58009CD092 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		004A7BEC20187DEA009CD092 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,10 @@
 				004A7BE32018445C009CD092 /* Custom Cell */,
 				001417E020158F3000B5055F /* AppDelegate.swift */,
 				001417E220158F3000B5055F /* HomeViewController.swift */,
-				0039528D2016F80500E53E98 /* AddEventViewController.swift */,
 				004A7BE6201848C6009CD092 /* EventsViewController.swift */,
 				004A7BEA20184E58009CD092 /* NotesViewController.swift */,
+				0039528D2016F80500E53E98 /* AddEventViewController.swift */,
+				004A7BEC20187DEA009CD092 /* AddNoteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				004A7BE52018477D009CD092 /* EventCell.swift in Sources */,
 				001417E120158F3000B5055F /* AppDelegate.swift in Sources */,
 				001417E320158F3000B5055F /* HomeViewController.swift in Sources */,
+				004A7BED20187DEA009CD092 /* AddNoteViewController.swift in Sources */,
 				004A7BE920184CC7009CD092 /* NoteCell.swift in Sources */,
 				004A7BD920181E65009CD092 /* NotesData.swift in Sources */,
 				004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */,

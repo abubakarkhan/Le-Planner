@@ -19,6 +19,10 @@ class NotesViewController: UIViewController {
         notesTableView.delegate = self
         notesTableView.tableFooterView = UIView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        notesTableView.reloadData()
+    }
 }
 
 extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
