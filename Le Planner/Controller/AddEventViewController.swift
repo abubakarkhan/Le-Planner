@@ -14,6 +14,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var eventTypeTextFIeld: UITextField!
     
     let arrayEventType = [EventType.Exercise,
                           EventType.Leisure,
@@ -28,18 +29,17 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func viewDidLoad() {
         pickerView.delegate = self
         pickerView.dataSource = self
+        pickerView.isHidden = true
+        
         super.viewDidLoad()
     
         let datePicker = UIDatePicker()
-        
         datePicker.datePickerMode = UIDatePickerMode.dateAndTime
-
         datePicker.addTarget(self,
                              action: #selector(AddEventViewController.datePickerValueChange(sender:)),
                              for: UIControlEvents.valueChanged)
 
-        dateField.inputView = datePicker
-
+        dateField.inputView = datePicker                
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -97,6 +97,11 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         navigationController?.popViewController(animated: true)
         
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func chooseEventBtn(_ sender: Any) {
+        if pickerView.isHidden {
+            pickerView.isHidden = false
+        }
     }
     
     @objc func datePickerValueChange(sender: UIDatePicker){

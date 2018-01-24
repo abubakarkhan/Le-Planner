@@ -167,26 +167,52 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-c6-ilg">
-                                <rect key="frame" x="0.0" y="254" width="375" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="Bcs-eG-hdc"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="402" width="375" height="216"/>
                             </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nxq-YI-gFI">
+                                <rect key="frame" x="20" y="254" width="335" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQX-IK-j5h">
+                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Choose Event Type">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="chooseEventBtn:" destination="JJH-3E-6Hd" eventType="touchUpInside" id="4DO-O5-cBP"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFz-nx-Bc9">
+                                        <rect key="frame" x="172.5" y="0.0" width="162.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uUt-Fj-rWl" firstAttribute="leading" secondItem="UjC-Qe-yhz" secondAttribute="leading" constant="20" id="2a4-xV-Lxg"/>
                             <constraint firstItem="UjC-Qe-yhz" firstAttribute="trailing" secondItem="woT-V7-Hjh" secondAttribute="trailing" constant="20" id="6Pz-ic-zWo"/>
-                            <constraint firstItem="Re7-c6-ilg" firstAttribute="leading" secondItem="UjC-Qe-yhz" secondAttribute="leading" id="8bG-sR-gc1"/>
                             <constraint firstItem="KYt-Hs-7Dh" firstAttribute="top" secondItem="woT-V7-Hjh" secondAttribute="bottom" constant="20" id="A7B-to-A0m"/>
+                            <constraint firstItem="Re7-c6-ilg" firstAttribute="trailing" secondItem="UjC-Qe-yhz" secondAttribute="trailing" id="Anu-YZ-o2b"/>
+                            <constraint firstItem="UjC-Qe-yhz" firstAttribute="trailing" secondItem="Nxq-YI-gFI" secondAttribute="trailing" constant="20" id="FUq-qj-Xpx"/>
+                            <constraint firstItem="Re7-c6-ilg" firstAttribute="leading" secondItem="UjC-Qe-yhz" secondAttribute="leading" id="Hyj-Zi-U2a"/>
                             <constraint firstItem="UjC-Qe-yhz" firstAttribute="trailing" secondItem="uUt-Fj-rWl" secondAttribute="trailing" constant="20" id="IXI-65-WSw"/>
                             <constraint firstItem="KYt-Hs-7Dh" firstAttribute="leading" secondItem="UjC-Qe-yhz" secondAttribute="leading" constant="20" id="IkY-pk-CrI"/>
+                            <constraint firstItem="Re7-c6-ilg" firstAttribute="bottom" secondItem="UjC-Qe-yhz" secondAttribute="bottom" id="LDR-0O-dMv"/>
                             <constraint firstItem="UjC-Qe-yhz" firstAttribute="trailing" secondItem="KYt-Hs-7Dh" secondAttribute="trailing" constant="20" id="MSs-oe-f7F"/>
+                            <constraint firstItem="Nxq-YI-gFI" firstAttribute="leading" secondItem="UjC-Qe-yhz" secondAttribute="leading" constant="20" id="PTQ-mx-epQ"/>
                             <constraint firstItem="woT-V7-Hjh" firstAttribute="leading" secondItem="UjC-Qe-yhz" secondAttribute="leading" constant="20" id="TBa-9h-abm"/>
                             <constraint firstItem="woT-V7-Hjh" firstAttribute="top" secondItem="UjC-Qe-yhz" secondAttribute="top" constant="40" id="im7-nc-qYe"/>
                             <constraint firstItem="uUt-Fj-rWl" firstAttribute="top" secondItem="KYt-Hs-7Dh" secondAttribute="bottom" constant="20" id="jx0-ro-iv5"/>
-                            <constraint firstItem="UjC-Qe-yhz" firstAttribute="trailing" secondItem="Re7-c6-ilg" secondAttribute="trailing" id="sAY-co-rPq"/>
-                            <constraint firstItem="Re7-c6-ilg" firstAttribute="top" secondItem="uUt-Fj-rWl" secondAttribute="bottom" constant="20" id="sOn-hA-66i"/>
+                            <constraint firstItem="Nxq-YI-gFI" firstAttribute="top" secondItem="uUt-Fj-rWl" secondAttribute="bottom" constant="20" id="ljs-0u-bgF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UjC-Qe-yhz"/>
                     </view>
@@ -200,6 +226,7 @@
                     <connections>
                         <outlet property="dateField" destination="uUt-Fj-rWl" id="WIC-0K-rUZ"/>
                         <outlet property="descField" destination="KYt-Hs-7Dh" id="lY7-tu-yer"/>
+                        <outlet property="eventTypeTextFIeld" destination="gFz-nx-Bc9" id="Sie-TF-jfO"/>
                         <outlet property="pickerView" destination="Re7-c6-ilg" id="1bl-eg-kqM"/>
                         <outlet property="titleField" destination="woT-V7-Hjh" id="2cT-l3-f5p"/>
                     </connections>
