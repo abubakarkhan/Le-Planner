@@ -65,13 +65,13 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if eventType != nil {
             et = eventType
         }else{
-            et = EventType.Other
+            et = EventType.Exercise
         }
         
         if eventDateTime == nil {
             eventDateTime = Date()
         }
-        
+        //FIx ************************ emtyp string
         
         EventData.instance.addEvent(event: Event(title: titleField.text!,
                                                  description: descField.text!,
