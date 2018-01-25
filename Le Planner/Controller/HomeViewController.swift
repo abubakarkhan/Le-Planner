@@ -7,20 +7,36 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, CLLocationManagerDelegate {
+    
+    //Weather API details
+    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
+    let APP_ID = "8c8f5b65ed02f777f21a3e8feac63696"
 
+    //Instance varialbes
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //Comment to be deleted later 
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    //MARK: - Netwroking
+    /*********************************************************/
+    
+    //MARK: - JSON Parsing
+    /*********************************************************/
+    
+    //MARK: - UI Changes
+    /*********************************************************/
+    
+    //MARK: - Location Manager
+    /*********************************************************/
 
 }
 
