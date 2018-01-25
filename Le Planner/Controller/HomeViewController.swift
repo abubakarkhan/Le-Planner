@@ -16,24 +16,44 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //Weather API details
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = "1ce0c41977d7850542e8079cb3a54f92"
+    
+    //Quote of the day api details
+    let QUOTE_URL = "https://quotes.rest/qod"
+    
 
     @IBOutlet weak var tempratureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherTypeLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
+    
+    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var qutoeAuthorLabel: UILabel!
+    
     //Instance varialbes
     let locationManager = CLLocationManager()
     let weatherDataModel = WeatherDataTemplate()
+    let quoteData = QuoteDataTemplate()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Location manager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        //Fire quote of the day API Request and update UI
+        getQuoteData(url: QUOTE_URL)
     }
+    
 
     //MARK: - Netwroking
     /*********************************************************/
@@ -57,20 +77,52 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    func getQuoteData(url: String){
+        
+        Alamofire.request(url).responseJSON {
+            response in
+            if response.result.isSuccess {
+                
+                let quoteJSON :  JSON = JSON(response.result.value!)
+                
+                print(quoteJSON)
+                self.updateQuote(json: quoteJSON)
+                
+            }
+            else {
+                let errorText = String(describing: response.result.error)
+                print("Error Quote: \(errorText)")
+                self.quoteLabel.text = "Connection Issues"
+            }
+        }
+    }
+    
     //MARK: - JSON Parsing
     /*********************************************************/
+    
+    func updateQuote(json: JSON){
+        if let quoteOfTheDay = json["contents"]["quotes"][0]["quote"].string {
+            
+            quoteData.quoteText = quoteOfTheDay
+            quoteData.author = "- "+json["contents"]["quotes"][0]["author"].stringValue
+            
+            updateUIForQuoteChanges()
+        }
+        else {
+            quoteLabel.text = ""
+            qutoeAuthorLabel.text = "Quote of the day Unavailable"
+        }
+        
+    }
+    
     func updateWeather(json: JSON){
         if let temprature = json["main"]["temp"].double {
             
             //convert from kelvin to celcius
             weatherDataModel.temprature = Int(temprature - 273.15)
-        
             weatherDataModel.city = json["name"].stringValue
-        
             weatherDataModel.condition = json["weather"][0]["id"].intValue
-        
             weatherDataModel.weatherIconName = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition)
-            
             weatherDataModel.weatherType = json["weather"][0]["description"].stringValue
             
             updateUIForWeatherChanges()
@@ -82,6 +134,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - UI Changes
     /*********************************************************/
+    
+    func updateUIForQuoteChanges(){
+        quoteLabel.text = quoteData.quoteText
+        qutoeAuthorLabel.text = quoteData.author
+    }
     
     func updateUIForWeatherChanges(){
         cityLabel.text = weatherDataModel.city

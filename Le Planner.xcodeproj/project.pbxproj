@@ -24,6 +24,7 @@
 		004A7BED20187DEA009CD092 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BEC20187DEA009CD092 /* AddNoteViewController.swift */; };
 		004A7BF520189529009CD092 /* Le_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BF420189529009CD092 /* Le_PlannerUITests.swift */; };
 		005E0FC720198F5F0091EB58 /* WeatherDataTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */; };
+		005E0FC92019A4290091EB58 /* QuoteDataTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E0FC82019A4290091EB58 /* QuoteDataTemplate.swift */; };
 		87A60475009D77146E38CA26 /* Pods_Le_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */; };
 		F181243389C6555FDE436399 /* Pods_Le_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		004A7BF420189529009CD092 /* Le_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Le_PlannerUITests.swift; sourceTree = "<group>"; };
 		004A7BF620189529009CD092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataTemplate.swift; sourceTree = "<group>"; };
+		005E0FC82019A4290091EB58 /* QuoteDataTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDataTemplate.swift; sourceTree = "<group>"; };
 		0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCE2EC6FBDC1A0368BCFB3F /* Pods-Le PlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Le PlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Le PlannerUITests/Pods-Le PlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_PlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				004A7BD620181DF1009CD092 /* Note.swift */,
 				004A7BD820181E65009CD092 /* NotesData.swift */,
 				005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */,
+				005E0FC82019A4290091EB58 /* QuoteDataTemplate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				004A7BEB20184E58009CD092 /* NotesViewController.swift in Sources */,
 				001417FD2015F95B00B5055F /* EventData.swift in Sources */,
 				004A7BD720181DF1009CD092 /* Note.swift in Sources */,
+				005E0FC92019A4290091EB58 /* QuoteDataTemplate.swift in Sources */,
 				004A7BE52018477D009CD092 /* EventCell.swift in Sources */,
 				001417E120158F3000B5055F /* AppDelegate.swift in Sources */,
 				001417E320158F3000B5055F /* HomeViewController.swift in Sources */,
