@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.6.0)
+  - Keyboardy (0.2.3)
+  - SVProgressHUD (2.2.2)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Keyboardy
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Keyboardy: d1e7dc7031832f37a849f2e7686cfe96078182af
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: 5ac33f821274693ba887c2fb892e0ecfb714b0ec
+
+COCOAPODS: 1.4.0
