@@ -23,6 +23,7 @@
 		004A7BEB20184E58009CD092 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BEA20184E58009CD092 /* NotesViewController.swift */; };
 		004A7BED20187DEA009CD092 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BEC20187DEA009CD092 /* AddNoteViewController.swift */; };
 		004A7BF520189529009CD092 /* Le_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BF420189529009CD092 /* Le_PlannerUITests.swift */; };
+		005E0FC720198F5F0091EB58 /* WeatherDataTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */; };
 		87A60475009D77146E38CA26 /* Pods_Le_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */; };
 		F181243389C6555FDE436399 /* Pods_Le_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		004A7BF220189529009CD092 /* Le PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004A7BF420189529009CD092 /* Le_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Le_PlannerUITests.swift; sourceTree = "<group>"; };
 		004A7BF620189529009CD092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataTemplate.swift; sourceTree = "<group>"; };
 		0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCE2EC6FBDC1A0368BCFB3F /* Pods-Le PlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Le PlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Le PlannerUITests/Pods-Le PlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_PlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				001417FC2015F95B00B5055F /* EventData.swift */,
 				004A7BD620181DF1009CD092 /* Note.swift */,
 				004A7BD820181E65009CD092 /* NotesData.swift */,
+				005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005E0FC720198F5F0091EB58 /* WeatherDataTemplate.swift in Sources */,
 				001417FB2015ED3800B5055F /* Event.swift in Sources */,
 				0039528E2016F80500E53E98 /* AddEventViewController.swift in Sources */,
 				004A7BEB20184E58009CD092 /* NotesViewController.swift in Sources */,
