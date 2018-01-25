@@ -52,7 +52,7 @@ class WeatherDataTemplate {
             return "snow2"
             
         case 904 :
-            return "sunny2"
+            return "sunny"
             
         default :
             return "sunny"

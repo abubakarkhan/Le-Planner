@@ -31,7 +31,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZW-G9-0bd" userLabel="Top">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Weather" translatesAutoresizingMaskIntoConstraints="NO" id="AV1-8k-UjF">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="AV1-8k-UjF">
                                                                 <rect key="frame" x="8" y="10" width="150" height="130"/>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ti4-HV-iWR">
@@ -39,19 +39,19 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temprature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="t9o-o2-15M">
                                                                         <rect key="frame" x="0.0" y="0.0" width="197" height="43.5"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXZ-HF-kmV">
                                                                         <rect key="frame" x="0.0" y="43.5" width="197" height="43"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="1X6-uK-wrx">
                                                                         <rect key="frame" x="0.0" y="86.5" width="197" height="43.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -577,10 +577,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Weather" width="512" height="512"/>
         <image name="eventIcon" width="32" height="32"/>
         <image name="homeIcon" width="32" height="32"/>
         <image name="notepadIcon" width="32" height="32"/>
+        <image name="sunny" width="512" height="512"/>
     </resources>
     <color key="tintColor" red="1" green="0.32927883099999999" blue="0.26089470930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
