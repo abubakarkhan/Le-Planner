@@ -42,7 +42,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
                              action: #selector(AddEventViewController.datePickerValueChange(sender:)),
                              for: UIControlEvents.valueChanged)
 
-        dateField.inputView = datePicker                
+        dateField.inputView = datePicker
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

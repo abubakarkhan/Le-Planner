@@ -20,30 +20,40 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //Quote of the day api details
     let QUOTE_URL = "https://quotes.rest/qod"
     
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var tempratureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherTypeLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     
     @IBOutlet weak var quoteLabel: UILabel!
-    @IBOutlet weak var qutoeAuthorLabel: UILabel!
+    @IBOutlet weak var quoteAuthorLabel: UILabel!
     
     //Instance varialbes
     let locationManager = CLLocationManager()
     let weatherDataModel = WeatherDataTemplate()
     let quoteData = QuoteDataTemplate()
+    var refresher : UIRefreshControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(HomeViewController.refreshData), for: UIControlEvents.valueChanged)
+        scrollView.addSubview(refresher)
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        setupWeatherANdQutoe()
+    }
+    
+    //MARK - Location and quote setup
+    func setupWeatherANdQutoe(){
         //Location manager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -55,6 +65,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
 
+    //MARK - Pull to refresh
+    @objc func refreshData(){
+        setupWeatherANdQutoe()
+        refresher.endRefreshing()
+    }
+    
     //MARK: - Netwroking
     /*********************************************************/
     
@@ -72,7 +88,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             else {
                 let errortext = String(describing: response.result.error)
                 print("Error from API: \(errortext)")
-                self.cityLabel.text = "Connection Issues"
+                self.weatherTypeLabel.text = "Connection Issues"
+                self.cityLabel.text = ""
+                self.tempratureLabel.text = ""
             }
         }
     }
@@ -92,7 +110,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             else {
                 let errorText = String(describing: response.result.error)
                 print("Error Quote: \(errorText)")
-                self.quoteLabel.text = "Connection Issues"
+                self.quoteAuthorLabel.text = "Connection Issues"
+                self.quoteLabel.text = ""
             }
         }
     }
@@ -110,7 +129,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
         else {
             quoteLabel.text = ""
-            qutoeAuthorLabel.text = "Quote of the day Unavailable"
+            quoteAuthorLabel.text = "Quote of the day Unavailable"
         }
         
     }
@@ -128,7 +147,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             updateUIForWeatherChanges()
         }
         else {
-            cityLabel.text = "Weather Unavailable"
+            weatherTypeLabel.text = "Weather Unavailable"
+            cityLabel.text = ""
+            tempratureLabel.text = ""
         }
     }
     
@@ -137,7 +158,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateUIForQuoteChanges(){
         quoteLabel.text = quoteData.quoteText
-        qutoeAuthorLabel.text = quoteData.author
+        quoteAuthorLabel.text = quoteData.author
     }
     
     func updateUIForWeatherChanges(){
