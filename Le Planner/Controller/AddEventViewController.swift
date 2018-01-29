@@ -85,11 +85,31 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func addNewEvent(){
-        EventData.instance.addEvent(event: Event(title: titleField.text!,
-                                                 description: descField.text!,
-                                                 dateTime: eventDateTime!,
-                                                 eventType: eventType!))
         
+        if eventDateTime == nil && eventType == nil{
+            EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                     description: descField.text!,
+                                                     dateTime: Date(),
+                                                     eventType: EventType.Other))
+            
+        }else if eventDateTime == nil{
+            
+                EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                         description: descField.text!,
+                                                         dateTime: Date(),
+                                                         eventType: eventType!))
+        }
+        else if eventType == nil{
+            EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                     description: descField.text!,
+                                                     dateTime: Date(),
+                                                     eventType: EventType.Other))
+        }else {
+            EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                     description: descField.text!,
+                                                     dateTime: eventDateTime!,
+                                                     eventType: eventType!))
+        }
         //Build alert for meeting added
         let alert = UIAlertController(title: "Event Added",
                                       message: "Your event was added",
@@ -120,6 +140,8 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         print(sender.date)
     }
 
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //Key board fix
         view.endEditing(true)
