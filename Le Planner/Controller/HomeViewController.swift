@@ -103,7 +103,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 
                 let quoteJSON :  JSON = JSON(response.result.value!)
                 
-                print(quoteJSON)
                 self.updateQuote(json: quoteJSON)
                 
             }
