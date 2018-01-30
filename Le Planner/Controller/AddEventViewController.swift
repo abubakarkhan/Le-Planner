@@ -42,7 +42,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
                              action: #selector(AddEventViewController.datePickerValueChange(sender:)),
                              for: UIControlEvents.valueChanged)
 
-        dateField.inputView = datePicker                
+        dateField.inputView = datePicker
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -63,24 +63,53 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func addEventBtn(_ sender: Any) {
-        var et : EventType?
         
-        if eventType != nil {
-            et = eventType
-        }else{
-            et = EventType.Exercise
-        }
-        
-        if eventDateTime == nil {
-            eventDateTime = Date()
-        }
         //Optimize for emty strings later ***
+        if !(titleField.text?.isEmpty)! &&
+            !(descField.text?.isEmpty)! &&
+            !(dateField.text?.isEmpty)! &&
+            !(eventTypeTextFIeld.text?.isEmpty)!{
+            addNewEvent()
+        }else{
+            eventNotAddedAlert()
+        }
+    }
+    func eventNotAddedAlert(){
+        //Build alert for meeting added
+        let alert = UIAlertController(title: "Failed",
+                                      message: "Your event was not added \nPlease fill in empty fields",
+                                      preferredStyle: .alert)
         
-        EventData.instance.addEvent(event: Event(title: titleField.text!,
-                                                 description: descField.text!,
-                                                 dateTime: eventDateTime!,
-                                                 eventType: et!))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Default action"), style: .`default`, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func addNewEvent(){
         
+        if eventDateTime == nil && eventType == nil{
+            EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                     description: descField.text!,
+                                                     dateTime: Date(),
+                                                     eventType: EventType.Other))
+            
+        }else if eventDateTime == nil{
+            
+                EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                         description: descField.text!,
+                                                         dateTime: Date(),
+                                                         eventType: eventType!))
+        }
+        else if eventType == nil{
+            EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                     description: descField.text!,
+                                                     dateTime: Date(),
+                                                     eventType: EventType.Other))
+        }else {
+            EventData.instance.addEvent(event: Event(title: titleField.text!,
+                                                     description: descField.text!,
+                                                     dateTime: eventDateTime!,
+                                                     eventType: eventType!))
+        }
         //Build alert for meeting added
         let alert = UIAlertController(title: "Event Added",
                                       message: "Your event was added",
@@ -90,9 +119,6 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
             self.navigateToPreviousScreen()
         }))
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
     }
     
     func navigateToPreviousScreen(){
@@ -114,6 +140,8 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         print(sender.date)
     }
 
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //Key board fix
         view.endEditing(true)
