@@ -9,7 +9,6 @@ target 'Le Planner' do
     pod 'SwiftyJSON'
     pod 'Alamofire'
 
-    # pod 'SVProgressHUD'
 
   target 'Le PlannerUITests' do
     inherit! :search_paths
