@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class EventsViewController: UIViewController {
     
     @IBOutlet weak var eventsTableView: UITableView!
+    
+    var eventArray = [Event]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +38,11 @@ class EventsViewController: UIViewController {
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return EventData.instance.getEventList().count
+        return eventArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentEvent = EventData.instance.getEventList()[indexPath.row]
+        let currentEvent = eventArray[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
         
@@ -47,7 +53,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-            EventData.instance.deleteEvent(index: indexPath.row)
+            self.eventArray.remove(at: indexPath.row)
             tableView.reloadData()
         }
         
@@ -55,23 +61,20 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Date formatter
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = DateFormatter.Style.medium
+                
         
         //selected event
-        let eventSelected = EventData.instance.getEventList()[indexPath.row]
+        let eventSelected = eventArray[indexPath.row]
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let alerBody = eventSelected.description + "\n" +
-            formatter.string(from: eventSelected.dateTime) + "\n" +
-            eventSelected.eventType.rawValue + " Event"
+        let alerBody = eventSelected.desc! + "\n" +
+            "\(eventSelected.date)" + "\n" +
+            eventSelected.type! + " Event"
         
         let messageAlert = "\n\n *To Delete Entry Swipe Left On Item"
         
-        let alert = UIAlertController(title: eventSelected.title,
+        let alert = UIAlertController(title: eventSelected.title!,
                                       message: alerBody + messageAlert, preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Dimiss", style: UIAlertActionStyle.default, handler: nil))

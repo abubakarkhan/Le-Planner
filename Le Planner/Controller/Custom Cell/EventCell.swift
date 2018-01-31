@@ -16,15 +16,40 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventDesc: UILabel!
     
     func setEventCell(event: Event){
-        //Date formatter
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = DateFormatter.Style.medium
         
-        eventImage.image = UIImage (named: event.eventType.rawValue)
-        eventTitle.text = event.title
-        eventDesc.text = event.description
-        eventDate.text = formatter.string(from: event.dateTime)
+        setEventIcon(eventType: event.type!)
+        eventTitle.text = event.title!
+        eventDesc.text = event.desc!
+        eventDate.text = String(event.date)
+    }
+    
+    func setEventIcon(eventType: String){
+        
+        var iconStr = ""
+        
+        switch eventType {
+        case "Exercise":
+            iconStr = "Exercise"
+            break
+        case "Meeting":
+            iconStr = "Meeting"
+            break
+        case "Work":
+            iconStr = "Work"
+            break
+        case "Leisure":
+            iconStr = "Leisure"
+            break
+        case "Study":
+            iconStr = "Study"
+            break
+        default:
+            iconStr = "Other"
+            break
+        }
+        
+        eventImage.image = UIImage (named: iconStr)
+        
     }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -15,15 +16,13 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var eventTypeTextFIeld: UITextField!
     
-    let arrayEventType = [EventType.Exercise,
-                          EventType.Leisure,
-                          EventType.Meeting,
-                          EventType.Other,
-                          EventType.Study,
-                          EventType.Work]
+    let arrayEventType = ["Exercise","Leisure","Meeting","Other","Study", "Work"]
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var eventType : EventType?
-    var eventDateTime : Date?
+    var eventArray = [Event]()
+    var eventType : String?
+    var eventDateTime : Double?
+    
     
     override func viewDidLoad() {
         let pickerView = UIPickerView()
@@ -54,12 +53,12 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return arrayEventType[row].rawValue
+        return arrayEventType[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         eventType = arrayEventType[row]
-        eventTypeTextFIeld.text = arrayEventType[row].rawValue
+        eventTypeTextFIeld.text = arrayEventType[row]
     }
     
     @IBAction func addEventBtn(_ sender: Any) {
@@ -70,12 +69,13 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
             !(dateField.text?.isEmpty)! &&
             !(eventTypeTextFIeld.text?.isEmpty)!{
             addNewEvent()
+            eventAddedAlert()
         }else{
             eventNotAddedAlert()
         }
     }
     func eventNotAddedAlert(){
-        //Build alert for meeting added
+        //Build alert for event not added
         let alert = UIAlertController(title: "Failed",
                                       message: "Your event was not added \nPlease fill in empty fields",
                                       preferredStyle: .alert)
@@ -85,32 +85,34 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func addNewEvent(){
+        //create new event object and add to array
+        let eventAdd = Event(context: context)
+        
+        eventAdd.title = titleField.text!
+        eventAdd.desc = descField .text!
         
         if eventDateTime == nil && eventType == nil{
-            EventData.instance.addEvent(event: Event(title: titleField.text!,
-                                                     description: descField.text!,
-                                                     dateTime: Date(),
-                                                     eventType: EventType.Other))
-            
-        }else if eventDateTime == nil{
-            
-                EventData.instance.addEvent(event: Event(title: titleField.text!,
-                                                         description: descField.text!,
-                                                         dateTime: Date(),
-                                                         eventType: eventType!))
+            eventAdd.date = Date().timeIntervalSince1970
+            eventAdd.type = "Other"
         }
-        else if eventType == nil{
-            EventData.instance.addEvent(event: Event(title: titleField.text!,
-                                                     description: descField.text!,
-                                                     dateTime: Date(),
-                                                     eventType: EventType.Other))
-        }else {
-            EventData.instance.addEvent(event: Event(title: titleField.text!,
-                                                     description: descField.text!,
-                                                     dateTime: eventDateTime!,
-                                                     eventType: eventType!))
+        else if eventDateTime == nil{
+            eventAdd.date = Date().timeIntervalSince1970
+            eventAdd.type = eventType!
         }
-        //Build alert for meeting added
+        else if (eventType?.isEmpty)! || eventType == nil {
+            eventAdd.date = eventDateTime!
+            eventAdd.type = "Other"
+        }
+        else {
+            eventAdd.date = eventDateTime!
+            eventAdd.type = eventType!
+        }
+        
+        eventArray.append(eventAdd)
+    }
+    
+    func eventAddedAlert(){
+        //Build alert for event added
         let alert = UIAlertController(title: "Event Added",
                                       message: "Your event was added",
                                       preferredStyle: .alert)
@@ -135,13 +137,10 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
         dateField.text = formatter.string(from: sender.date)
         
-        eventDateTime = sender.date
+        eventDateTime = sender.date.timeIntervalSince1970
         
-        print(sender.date)
     }
 
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //Key board fix
         view.endEditing(true)

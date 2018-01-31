@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class NotesViewController: UIViewController {
     
     @IBOutlet weak var notesTableView: UITableView!
     
+    var noteArray = [Note]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +25,46 @@ class NotesViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        loadNotes()
+    }
+    //MARK: - Save notes data
+    func saveNotes(){
+        
+        do {
+            try context.save()
+        } catch{
+            print("Error saving notes: \(error)")
+        }
+        
+        notesTableView.reloadData()
+        
+    }
+    //MARK: - Load notes data
+    func loadNotes(){
+        
+        let request : NSFetchRequest<Note> = Note.fetchRequest()
+        
+        do {
+            noteArray = try context.fetch(request)
+        } catch {
+            print("Error loading notesL \(error)")
+        }
+        
         notesTableView.reloadData()
     }
 }
 
+//MARK: - Table view
+
 extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NotesData.instance.getNotesList().count
+        return noteArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let currentNote = NotesData.instance.getNotesList()[indexPath.row]
+        let currentNote = noteArray[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell") as! NoteCell
         
@@ -45,11 +76,11 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let currentNote = NotesData.instance.getNotesList()[indexPath.row]
+        let currentNote = noteArray[indexPath.row]
         let messageAlert = "\n\n *To Delete Entry Swipe Left On Item"
         
-        let alert = UIAlertController(title: currentNote.title,
-            message: currentNote.body + messageAlert, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: currentNote.title!,
+            message: currentNote.body! + messageAlert, preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Dimiss", style: UIAlertActionStyle.default, handler: nil))
         
@@ -58,8 +89,9 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-            NotesData.instance.deleteNote(index: indexPath.row)
-            tableView.reloadData()
+            self.context.delete(self.noteArray[indexPath.row])
+            self.noteArray.remove(at: indexPath.row)
+            self.saveNotes()
         }
         
         return [deleteAction]

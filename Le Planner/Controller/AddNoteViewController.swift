@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class AddNoteViewController: UIViewController {
     
     @IBOutlet weak var noteTitleField: UITextField!
     @IBOutlet weak var noteDetailField: UITextView!
+    
+    var noteArray = [Note]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +60,20 @@ class AddNoteViewController: UIViewController {
     }
     
     func addNote(title: String, body: String){
-        let newNote = Note(title: title, body: body)
-        NotesData.instance.addNote(note: newNote)
+        let newNote = Note(context: context)
+        newNote.title = title
+        newNote.body = body
+        
+        noteArray.append(newNote)
+        saveNote()
+    }
+    
+    func saveNote(){
+        do{
+            try context.save()
+        }catch {
+            print("Error saving new note: \(error)")
+        }
     }
     
     func navigateToPreviousScreen(){

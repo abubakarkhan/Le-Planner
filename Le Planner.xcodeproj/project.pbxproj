@@ -12,11 +12,7 @@
 		001417E320158F3000B5055F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417E220158F3000B5055F /* HomeViewController.swift */; };
 		001417E820158F3000B5055F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001417E620158F3000B5055F /* Main.storyboard */; };
 		001417EA20158F3000B5055F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001417E920158F3000B5055F /* Assets.xcassets */; };
-		001417FB2015ED3800B5055F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417FA2015ED3800B5055F /* Event.swift */; };
-		001417FD2015F95B00B5055F /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001417FC2015F95B00B5055F /* EventData.swift */; };
 		0039528E2016F80500E53E98 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039528D2016F80500E53E98 /* AddEventViewController.swift */; };
-		004A7BD720181DF1009CD092 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BD620181DF1009CD092 /* Note.swift */; };
-		004A7BD920181E65009CD092 /* NotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BD820181E65009CD092 /* NotesData.swift */; };
 		004A7BE52018477D009CD092 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE42018477D009CD092 /* EventCell.swift */; };
 		004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE6201848C6009CD092 /* EventsViewController.swift */; };
 		004A7BE920184CC7009CD092 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BE820184CC7009CD092 /* NoteCell.swift */; };
@@ -25,6 +21,7 @@
 		004A7BF520189529009CD092 /* Le_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A7BF420189529009CD092 /* Le_PlannerUITests.swift */; };
 		005E0FC720198F5F0091EB58 /* WeatherDataTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */; };
 		005E0FC92019A4290091EB58 /* QuoteDataTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E0FC82019A4290091EB58 /* QuoteDataTemplate.swift */; };
+		007914852021CB2700D7D609 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 007914832021CB2700D7D609 /* DataModel.xcdatamodeld */; };
 		87A60475009D77146E38CA26 /* Pods_Le_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */; };
 		F181243389C6555FDE436399 /* Pods_Le_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */; };
 /* End PBXBuildFile section */
@@ -47,11 +44,7 @@
 		001417E720158F3000B5055F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		001417E920158F3000B5055F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001417EE20158F3000B5055F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		001417FA2015ED3800B5055F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		001417FC2015F95B00B5055F /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		0039528D2016F80500E53E98 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
-		004A7BD620181DF1009CD092 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		004A7BD820181E65009CD092 /* NotesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesData.swift; sourceTree = "<group>"; };
 		004A7BE42018477D009CD092 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		004A7BE6201848C6009CD092 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		004A7BE820184CC7009CD092 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
@@ -62,6 +55,7 @@
 		004A7BF620189529009CD092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataTemplate.swift; sourceTree = "<group>"; };
 		005E0FC82019A4290091EB58 /* QuoteDataTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDataTemplate.swift; sourceTree = "<group>"; };
+		007914842021CB2700D7D609 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCE2EC6FBDC1A0368BCFB3F /* Pods-Le PlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Le PlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Le PlannerUITests/Pods-Le PlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_PlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,12 +142,9 @@
 		001417F72015ECF400B5055F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				001417FA2015ED3800B5055F /* Event.swift */,
-				001417FC2015F95B00B5055F /* EventData.swift */,
-				004A7BD620181DF1009CD092 /* Note.swift */,
-				004A7BD820181E65009CD092 /* NotesData.swift */,
 				005E0FC620198F5F0091EB58 /* WeatherDataTemplate.swift */,
 				005E0FC82019A4290091EB58 /* QuoteDataTemplate.swift */,
+				007914832021CB2700D7D609 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,19 +400,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007914852021CB2700D7D609 /* DataModel.xcdatamodeld in Sources */,
 				005E0FC720198F5F0091EB58 /* WeatherDataTemplate.swift in Sources */,
-				001417FB2015ED3800B5055F /* Event.swift in Sources */,
 				0039528E2016F80500E53E98 /* AddEventViewController.swift in Sources */,
 				004A7BEB20184E58009CD092 /* NotesViewController.swift in Sources */,
-				001417FD2015F95B00B5055F /* EventData.swift in Sources */,
-				004A7BD720181DF1009CD092 /* Note.swift in Sources */,
 				005E0FC92019A4290091EB58 /* QuoteDataTemplate.swift in Sources */,
 				004A7BE52018477D009CD092 /* EventCell.swift in Sources */,
 				001417E120158F3000B5055F /* AppDelegate.swift in Sources */,
 				001417E320158F3000B5055F /* HomeViewController.swift in Sources */,
 				004A7BED20187DEA009CD092 /* AddNoteViewController.swift in Sources */,
 				004A7BE920184CC7009CD092 /* NoteCell.swift in Sources */,
-				004A7BD920181E65009CD092 /* NotesData.swift in Sources */,
 				004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +648,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		007914832021CB2700D7D609 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				007914842021CB2700D7D609 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 007914842021CB2700D7D609 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 001417D520158F3000B5055F /* Project object */;
 }
