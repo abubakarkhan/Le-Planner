@@ -46,14 +46,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         refresher.addTarget(self, action: #selector(HomeViewController.refreshData), for: UIControlEvents.valueChanged)
         scrollView.addSubview(refresher)
 
+        //Fetch Data
+        fetchWeatherANdQutoe()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setupWeatherANdQutoe()
-    }
     
     //MARK - Location and quote setup
-    func setupWeatherANdQutoe(){
+    func fetchWeatherANdQutoe(){
         //Location manager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -67,7 +66,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
     //MARK - Pull to refresh
     @objc func refreshData(){
-        setupWeatherANdQutoe()
+        fetchWeatherANdQutoe()
         refresher.endRefreshing()
     }
     
