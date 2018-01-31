@@ -15,13 +15,12 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var noteDetailField: UITextView!
     
     var noteArray = [Note]()
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 
     @IBAction func addButton(_ sender: Any) {
         
@@ -29,8 +28,7 @@ class AddNoteViewController: UIViewController {
             newNoteAddedAlert()
         } else {
             noteNotAddedAlert()
-        }
-    
+        }    
     }
     
     func noteNotAddedAlert(){

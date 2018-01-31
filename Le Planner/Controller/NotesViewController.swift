@@ -47,7 +47,7 @@ class NotesViewController: UIViewController {
         do {
             noteArray = try context.fetch(request)
         } catch {
-            print("Error loading notesL \(error)")
+            print("Error loading notes: \(error)")
         }
         
         notesTableView.reloadData()

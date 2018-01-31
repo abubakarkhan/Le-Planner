@@ -20,7 +20,7 @@ class EventCell: UITableViewCell {
         setEventIcon(eventType: event.type!)
         eventTitle.text = event.title!
         eventDesc.text = event.desc!
-        eventDate.text = String(event.date)
+        eventDate.text = String(describing: Date(timeIntervalSince1970: event.date))
     }
     
     func setEventIcon(eventType: String){

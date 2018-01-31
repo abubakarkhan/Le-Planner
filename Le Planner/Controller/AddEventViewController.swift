@@ -16,12 +16,11 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var eventTypeTextFIeld: UITextField!
     
-    let arrayEventType = ["Exercise","Leisure","Meeting","Other","Study", "Work"]
+    let arrayEventType = ["Exercise","Leisure","Meeting","Other","Study","Work"]
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var eventArray = [Event]()
-    var eventType : String?
-    var eventDateTime : Double?
+    var eventDate : Double?
     
     
     override func viewDidLoad() {
@@ -30,7 +29,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        
+        //Spinner input for event type field
         eventTypeTextFIeld.inputView = pickerView
         
         super.viewDidLoad()
@@ -41,6 +40,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
                              action: #selector(AddEventViewController.datePickerValueChange(sender:)),
                              for: UIControlEvents.valueChanged)
 
+        //Assign date picker inupt
         dateField.inputView = datePicker
     }
     
@@ -57,7 +57,6 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        eventType = arrayEventType[row]
         eventTypeTextFIeld.text = arrayEventType[row]
     }
     
@@ -74,6 +73,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
             eventNotAddedAlert()
         }
     }
+    //MARKS: - Alerts
     func eventNotAddedAlert(){
         //Build alert for event not added
         let alert = UIAlertController(title: "Failed",
@@ -82,33 +82,6 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Default action"), style: .`default`, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func addNewEvent(){
-        //create new event object and add to array
-        let eventAdd = Event(context: context)
-        
-        eventAdd.title = titleField.text!
-        eventAdd.desc = descField .text!
-        
-        if eventDateTime == nil && eventType == nil{
-            eventAdd.date = Date().timeIntervalSince1970
-            eventAdd.type = "Other"
-        }
-        else if eventDateTime == nil{
-            eventAdd.date = Date().timeIntervalSince1970
-            eventAdd.type = eventType!
-        }
-        else if (eventType?.isEmpty)! || eventType == nil {
-            eventAdd.date = eventDateTime!
-            eventAdd.type = "Other"
-        }
-        else {
-            eventAdd.date = eventDateTime!
-            eventAdd.type = eventType!
-        }
-        
-        eventArray.append(eventAdd)
     }
     
     func eventAddedAlert(){
@@ -122,6 +95,43 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    //MARK: - Adding events
+    func addNewEvent(){
+        //create new event object and add to array
+        let eventAdd = Event(context: context)
+        
+        eventAdd.title = titleField.text!
+        eventAdd.desc = descField .text!
+        eventAdd.type = verifyEventType()
+        
+        if eventDate == nil{
+            eventAdd.date = Date().timeIntervalSince1970
+        }
+        else {
+            eventAdd.date = eventDate!
+        }
+        
+        eventArray.append(eventAdd)
+        saveEvent()
+    }
+    
+    func saveEvent(){
+        do{
+            try context.save()
+        }catch {
+            print("Error saving new event: \(error)")
+        }
+    }
+    
+    func verifyEventType() -> String{
+        if arrayEventType.contains(eventTypeTextFIeld.text!) {
+            return eventTypeTextFIeld.text!
+        } else {
+            return "Other"
+        }
+    }
+    
     
     func navigateToPreviousScreen(){
         //navigate back to event list
@@ -137,7 +147,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
         dateField.text = formatter.string(from: sender.date)
         
-        eventDateTime = sender.date.timeIntervalSince1970
+        eventDate = sender.date.timeIntervalSince1970
         
     }
 
