@@ -27,10 +27,12 @@ class NewsViewController: UITableViewController {
         
         newsTable.delegate = self
         newsTable.dataSource = self
+        //hide separator for empty cell
+        newsTable.tableFooterView = UIView()
         
         let newsUrl = "https://newsapi.org/v2/top-headlines"
         let apiKey = "9d4c925408fb461ca65c2de49762c1c4"
-        let params : [String : String] = ["apiKey" : apiKey, "country" : "au"]
+        let params : [String : String] = ["apiKey" : apiKey, "country" : "us"]
         
         getNewsData(url: newsUrl, parameters: params)
         
