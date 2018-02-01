@@ -40,6 +40,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.alwaysBounceVertical = true
         // Do any additional setup after loading the view, typically from a nib.
         
         refresher = UIRefreshControl()
