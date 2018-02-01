@@ -79,8 +79,16 @@ class NewsViewController: UITableViewController {
         
         for i in 0..<20 {
         
-            if let source = json["articles"][i]["source"]["name"].string {
+            if let title = json["articles"][i]["title"].string {
                 let news = NewsDataTemplate()
+            
+                news.title = title
+                
+                //Check for nulls from api
+                
+                if let source = json["articles"][i]["source"]["name"].string {
+                    news.source = source
+                }
                 
                 if let author = json["articles"][i]["author"].string {
                     news.author = author
@@ -91,24 +99,14 @@ class NewsViewController: UITableViewController {
                 if let imageUrl = json["articles"][i]["urlToImage"].string {
                     news.imageUrl = imageUrl
                 }
-//                if let author = json["articles"][i]["author"].string {
-//                    news.author = author
-//                }
-//                if let author = json["articles"][i]["author"].string {
-//                    news.author = author
-//                }
-//                if let author = json["articles"][i]["author"].string {
-//                    news.author = author
-//                }
-//                if let author = json["articles"][i]["author"].string {
-//                    news.author = author
-//                }
-//
-                news.publishedAt = json["articles"][i]["publishedAt"].string!
-                news.source = source
-                news.title = json["articles"][i]["title"].string!
-                news.url = json["articles"][i]["url"].string!
-             
+                if let publishedAt = json["articles"][i]["publishedAt"].string {
+                    news.publishedAt = publishedAt
+                }
+
+                if let url = json["articles"][i]["url"].string {
+                    news.url = url
+                }
+                
                 newsArray.append(news)
             }
             else {

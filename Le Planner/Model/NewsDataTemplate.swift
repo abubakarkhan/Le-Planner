@@ -10,11 +10,11 @@ import Foundation
 
 class NewsDataTemplate {
     
-    var title : String = ""
-    var description : String = ""
-    var author : String = ""
-    var source : String = ""
-    var publishedAt : String = ""
+    var title : String = "Title: N/A"
+    var description : String = "Description: N/A"
+    var author : String = "Author: N/A"
+    var source : String = "Source: N/A"
+    var publishedAt : String = "Published Date: N/A"
     var imageUrl : String = ""
     var url : String = ""
 }
