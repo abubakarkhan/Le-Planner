@@ -21,9 +21,7 @@ class NewsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        //Progress message
-        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
-        SVProgressHUD.show(withStatus: "Fetching latest headlines")
+        
         
         newsTable.delegate = self
         newsTable.dataSource = self
@@ -58,6 +56,9 @@ class NewsViewController: UITableViewController {
     /*********************************************************/
     
     func getNewsData(url: String, parameters: [String : String]) {
+        //Progress message
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+        SVProgressHUD.show(withStatus: "Fetching latest headlines")
         
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
