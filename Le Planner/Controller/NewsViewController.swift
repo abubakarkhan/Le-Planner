@@ -21,10 +21,9 @@ class NewsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        //Progress message and disable interactions
+        //Progress message
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
         SVProgressHUD.show(withStatus: "Fetching latest headlines")
-        UIApplication.shared.beginIgnoringInteractionEvents()
         
         newsTable.delegate = self
         newsTable.dataSource = self
@@ -116,8 +115,7 @@ class NewsViewController: UITableViewController {
                 print("Fetch failed")
             }
             newsTable.reloadData()
-            //Dismiss progress message and enable interactions
-            UIApplication.shared.endIgnoringInteractionEvents()
+            //Dismiss progress message
             SVProgressHUD.dismiss()
         }
      

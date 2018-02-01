@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -53,6 +54,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK - Location and quote setup
     func fetchWeatherANdQutoe(){
+        //Progress message
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
+        SVProgressHUD.show(withStatus: "Updating Widgets")
+        
         //Location manager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -149,6 +154,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             cityLabel.text = ""
             tempratureLabel.text = ""
         }
+        //Dismiss progress message
+        SVProgressHUD.dismiss()
     }
     
     //MARK: - UI Changes
