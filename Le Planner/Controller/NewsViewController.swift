@@ -13,28 +13,42 @@ import SVProgressHUD
 
 class NewsViewController: UITableViewController {
 
+    //News api details
+    let newsUrl = "https://newsapi.org/v2/top-headlines"
+    let apiKey = "9d4c925408fb461ca65c2de49762c1c4"
+    
+    
     @IBOutlet var newsTable: UITableView!
     
     var newsArray = [NewsDataTemplate]()
     var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView()
+    var refresher : UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
-        
         newsTable.delegate = self
         newsTable.dataSource = self
         //hide separator for empty cell
         newsTable.tableFooterView = UIView()
         
-        let newsUrl = "https://newsapi.org/v2/top-headlines"
-        let apiKey = "9d4c925408fb461ca65c2de49762c1c4"
-        let params : [String : String] = ["apiKey" : apiKey, "country" : "us"]
+        //Pull to refresh setup
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(HomeViewController.refreshData), for: UIControlEvents.valueChanged)
+        newsTable.addSubview(refresher)
         
+        let params : [String : String] = ["apiKey" : apiKey, "country" : "us"]
         getNewsData(url: newsUrl, parameters: params)
         
     }
+    //MARK - Pull to refresh
+    @objc func refreshData(){
+        let params : [String : String] = ["apiKey" : apiKey, "country" : "us"]
+        getNewsData(url: newsUrl, parameters: params)
+        refresher.endRefreshing()
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +65,24 @@ class NewsViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedNews = newsArray[indexPath.row]
+        
+        self.performSegue(withIdentifier: "NewsToDetail", sender: selectedNews)
+    }
+    
+    //Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewsToDetail" {
+            let destinationVC = segue.destination as! NewsDetailViewController
+            destinationVC.newsDetail = sender as? NewsDataTemplate
+        }
+    }
+    
     
     //MARK: - Netwroking
     /*********************************************************/
@@ -99,13 +131,9 @@ class NewsViewController: UITableViewController {
                 if let description = json["articles"][i]["description"].string {
                     news.description = description
                 }
-                if let imageUrl = json["articles"][i]["urlToImage"].string {
-                    news.imageUrl = imageUrl
-                }
                 if let publishedAt = json["articles"][i]["publishedAt"].string {
                     news.publishedAt = publishedAt
                 }
-
                 if let url = json["articles"][i]["url"].string {
                     news.url = url
                 }

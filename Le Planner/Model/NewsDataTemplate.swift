@@ -14,7 +14,6 @@ class NewsDataTemplate {
     var description : String = "Description: N/A"
     var author : String = "Author: N/A"
     var source : String = "Source: N/A"
-    var publishedAt : String = "Published Date: N/A"
-    var imageUrl : String = ""
+    var publishedAt : String = "Published Date: N/A"    
     var url : String = ""
 }

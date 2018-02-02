@@ -41,9 +41,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.alwaysBounceVertical = true
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        //Setup Pull to refresh
         refresher = UIRefreshControl()
         refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refresher.addTarget(self, action: #selector(HomeViewController.refreshData), for: UIControlEvents.valueChanged)
@@ -52,7 +50,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         //Fetch Data
         fetchWeatherANdQutoe()
     }
-    
+    //MARK: - Pull to refresh
+    @objc func refreshData(){
+        fetchWeatherANdQutoe()
+        refresher.endRefreshing()
+    }
     
     //MARK - Location and quote setup
     func fetchWeatherANdQutoe(){
@@ -68,13 +70,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         //Fire quote of the day API Request and update UI
         getQuoteData(url: QUOTE_URL)
-    }
-    
-
-    //MARK - Pull to refresh
-    @objc func refreshData(){
-        fetchWeatherANdQutoe()
-        refresher.endRefreshing()
     }
     
     //MARK: - Netwroking

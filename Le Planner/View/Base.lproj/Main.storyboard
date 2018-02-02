@@ -11,9 +11,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+        <array key="HelveticaNeueExtras.ttc">
+            <string>HelveticaNeue-CondensedBold</string>
+        </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-LightItalic</string>
+            <string>HelveticaNeue-ThinItalic</string>
         </array>
     </customFonts>
     <scenes>
@@ -28,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sxm-ZG-V60">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9C-20-XbQ">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r9C-20-XbQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cz-vB-V6l">
@@ -188,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840.8" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="1689" y="0.0"/>
         </scene>
         <!--Events-->
         <scene sceneID="Mxp-7E-wur">
@@ -290,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQq-JA-AGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502" y="373"/>
+            <point key="canvasLocation" x="1476" y="713"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="I0V-eI-uGJ">
@@ -429,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9La-jN-Ju3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2309.5999999999999" y="372.86356821589209"/>
+            <point key="canvasLocation" x="2284" y="713"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -499,11 +506,99 @@
                     <navigationItem key="navigationItem" title="News Headlines" id="BhF-j4-WsC"/>
                     <connections>
                         <outlet property="newsTable" destination="zTY-9h-WpV" id="q9D-sb-c73"/>
+                        <segue destination="ljE-el-z1D" kind="show" identifier="NewsToDetail" id="RPq-o9-5t7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMp-le-QoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="326" y="-715"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="aVf-Lj-tTM">
+            <objects>
+                <viewController id="ljE-el-z1D" customClass="NewsDetailViewController" customModule="Le_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G7w-T3-5Lv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UCm-BM-aX1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVr-NV-1fE">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="554"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="589-hw-WKa" userLabel="newsTitle">
+                                                <rect key="frame" x="10" y="10" width="354" height="113.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-tr-UJX" userLabel="newsDesc">
+                                                <rect key="frame" x="10" y="133.5" width="354" height="79.5"/>
+                                                <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label </string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published at: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QtG-gX-LI8" userLabel="pDate">
+                                                <rect key="frame" x="10" y="223" width="354" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0M-yy-N1N" userLabel="source">
+                                                <rect key="frame" x="10" y="242" width="354" height="19"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Ex6-tr-UJX" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="DoM-ct-fcO"/>
+                                            <constraint firstItem="QtG-gX-LI8" firstAttribute="top" secondItem="Ex6-tr-UJX" secondAttribute="bottom" constant="10" id="F2b-LV-Me0"/>
+                                            <constraint firstItem="w0M-yy-N1N" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="JEF-sZ-xOu"/>
+                                            <constraint firstItem="589-hw-WKa" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="MNP-PQ-m8M"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ex6-tr-UJX" secondAttribute="trailing" constant="10" id="MOA-l2-WsH"/>
+                                            <constraint firstAttribute="trailing" secondItem="589-hw-WKa" secondAttribute="trailing" constant="10" id="ObV-7b-EZ4"/>
+                                            <constraint firstAttribute="trailing" secondItem="QtG-gX-LI8" secondAttribute="trailing" constant="10" id="ZI0-oL-siP"/>
+                                            <constraint firstItem="Ex6-tr-UJX" firstAttribute="top" secondItem="589-hw-WKa" secondAttribute="bottom" constant="10" id="adT-Lp-CMY"/>
+                                            <constraint firstAttribute="trailing" secondItem="w0M-yy-N1N" secondAttribute="trailing" constant="10" id="b5i-hZ-772"/>
+                                            <constraint firstItem="QtG-gX-LI8" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="hcW-iW-xuI"/>
+                                            <constraint firstItem="589-hw-WKa" firstAttribute="top" secondItem="GVr-NV-1fE" secondAttribute="top" constant="10" id="ijF-r1-j7L"/>
+                                            <constraint firstItem="w0M-yy-N1N" firstAttribute="top" secondItem="QtG-gX-LI8" secondAttribute="bottom" id="yKh-oB-pAi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GVr-NV-1fE" firstAttribute="centerY" secondItem="UCm-BM-aX1" secondAttribute="centerY" id="DQL-nW-mUh"/>
+                                    <constraint firstAttribute="bottom" secondItem="GVr-NV-1fE" secondAttribute="bottom" id="FHU-II-uG5"/>
+                                    <constraint firstItem="GVr-NV-1fE" firstAttribute="leading" secondItem="UCm-BM-aX1" secondAttribute="leading" id="S8m-cS-Do8"/>
+                                    <constraint firstItem="GVr-NV-1fE" firstAttribute="top" secondItem="UCm-BM-aX1" secondAttribute="top" id="UKB-c2-Eda"/>
+                                    <constraint firstAttribute="trailing" secondItem="GVr-NV-1fE" secondAttribute="trailing" id="Y5b-Uf-V1J"/>
+                                    <constraint firstItem="GVr-NV-1fE" firstAttribute="centerX" secondItem="UCm-BM-aX1" secondAttribute="centerX" id="p6C-Rp-lLi"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UCm-BM-aX1" firstAttribute="top" secondItem="mYW-16-8Pn" secondAttribute="top" id="5EP-UR-Zor"/>
+                            <constraint firstItem="UCm-BM-aX1" firstAttribute="leading" secondItem="mYW-16-8Pn" secondAttribute="leading" id="5uy-he-KoG"/>
+                            <constraint firstItem="mYW-16-8Pn" firstAttribute="trailing" secondItem="UCm-BM-aX1" secondAttribute="trailing" id="VWN-U9-7Go"/>
+                            <constraint firstItem="mYW-16-8Pn" firstAttribute="bottom" secondItem="UCm-BM-aX1" secondAttribute="bottom" id="wg4-8d-cif"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mYW-16-8Pn"/>
+                    </view>
+                    <connections>
+                        <outlet property="newsDesc" destination="Ex6-tr-UJX" id="yBC-Ix-ll3"/>
+                        <outlet property="newsTitle" destination="589-hw-WKa" id="3xy-W0-DWm"/>
+                        <outlet property="pDate" destination="QtG-gX-LI8" id="aMC-XV-myd"/>
+                        <outlet property="source" destination="w0M-yy-N1N" id="HNi-gy-EJY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDw-ff-AL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="-716"/>
         </scene>
         <!--Home-->
         <scene sceneID="Iic-u7-X05">
@@ -523,7 +618,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLB-kW-D3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087.2" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="935" y="0.0"/>
         </scene>
         <!--Notes-->
         <scene sceneID="VRV-Ck-Gde">
@@ -733,7 +828,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pR1-Zq-Vr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="373"/>
+            <point key="canvasLocation" x="722" y="713"/>
         </scene>
         <!--Notes-->
         <scene sceneID="SNe-Pr-xBi">

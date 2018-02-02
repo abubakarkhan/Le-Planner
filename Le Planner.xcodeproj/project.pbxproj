@@ -24,6 +24,7 @@
 		007914852021CB2700D7D609 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 007914832021CB2700D7D609 /* DataModel.xcdatamodeld */; };
 		007914B12022A36B00D7D609 /* NewsDataTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914B02022A36B00D7D609 /* NewsDataTemplate.swift */; };
 		007914B32022B30100D7D609 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914B22022B30100D7D609 /* NewsViewController.swift */; };
+		007914B520240C3D00D7D609 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914B420240C3D00D7D609 /* NewsDetailViewController.swift */; };
 		87A60475009D77146E38CA26 /* Pods_Le_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */; };
 		F181243389C6555FDE436399 /* Pods_Le_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		007914842021CB2700D7D609 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		007914B02022A36B00D7D609 /* NewsDataTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataTemplate.swift; sourceTree = "<group>"; };
 		007914B22022B30100D7D609 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		007914B420240C3D00D7D609 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCE2EC6FBDC1A0368BCFB3F /* Pods-Le PlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Le PlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Le PlannerUITests/Pods-Le PlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_PlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +97,10 @@
 				001417E020158F3000B5055F /* AppDelegate.swift */,
 				001417E220158F3000B5055F /* HomeViewController.swift */,
 				004A7BE6201848C6009CD092 /* EventsViewController.swift */,
-				007914B22022B30100D7D609 /* NewsViewController.swift */,
-				004A7BEA20184E58009CD092 /* NotesViewController.swift */,
 				0039528D2016F80500E53E98 /* AddEventViewController.swift */,
+				007914B22022B30100D7D609 /* NewsViewController.swift */,
+				007914B420240C3D00D7D609 /* NewsDetailViewController.swift */,
+				004A7BEA20184E58009CD092 /* NotesViewController.swift */,
 				004A7BEC20187DEA009CD092 /* AddNoteViewController.swift */,
 			);
 			path = Controller;
@@ -418,6 +421,7 @@
 				001417E120158F3000B5055F /* AppDelegate.swift in Sources */,
 				001417E320158F3000B5055F /* HomeViewController.swift in Sources */,
 				007914B12022A36B00D7D609 /* NewsDataTemplate.swift in Sources */,
+				007914B520240C3D00D7D609 /* NewsDetailViewController.swift in Sources */,
 				004A7BED20187DEA009CD092 /* AddNoteViewController.swift in Sources */,
 				004A7BE920184CC7009CD092 /* NoteCell.swift in Sources */,
 				004A7BE7201848C6009CD092 /* EventsViewController.swift in Sources */,
