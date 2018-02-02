@@ -85,6 +85,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 
                 self.updateWeather(json: weatherJSON)
                 
+                //Dismiss progress message
+                SVProgressHUD.dismiss()
+                
             }
             else {
                 let errortext = String(describing: response.result.error)
@@ -92,6 +95,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 self.weatherTypeLabel.text = "Connection Issues"
                 self.cityLabel.text = ""
                 self.tempratureLabel.text = ""
+                
+                //Dismiss progress message
+                SVProgressHUD.dismiss()
             }
         }
     }
@@ -131,7 +137,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             quoteLabel.text = ""
             quoteAuthorLabel.text = "Quote of the day Unavailable"
         }
-        
     }
     
     func updateWeather(json: JSON){
@@ -151,8 +156,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             cityLabel.text = ""
             tempratureLabel.text = ""
         }
-        //Dismiss progress message
-        SVProgressHUD.dismiss()
     }
     
     //MARK: - UI Changes

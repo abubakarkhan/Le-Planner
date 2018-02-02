@@ -60,8 +60,7 @@ class NewsViewController: UITableViewController {
         let cell = newsTable.dequeueReusableCell(withIdentifier: "NewsCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "NewsCell")
         
         cell.textLabel?.text = newsArray[indexPath.row].title
-        cell.detailTextLabel?.text = newsArray[indexPath.row].description
-        cell.imageView?.image = UIImage(named: "News")
+        cell.detailTextLabel?.text = newsArray[indexPath.row].description        
         
         return cell
     }
@@ -99,9 +98,14 @@ class NewsViewController: UITableViewController {
                 let newsJSON : JSON  = JSON(response.result.value!)
                 
                 self.updateNews(json: newsJSON)
+                
+                //Dismiss progress message
+                SVProgressHUD.dismiss()
             }
             else {
                 print("Error from api: \(String(describing: response.result.value))")
+                //Dismiss progress message
+                SVProgressHUD.dismiss()
             }
         }
     }
@@ -111,6 +115,8 @@ class NewsViewController: UITableViewController {
     /*********************************************************/
     
     func updateNews(json: JSON) {
+        
+        var array = [NewsDataTemplate]()
         
         for i in 0..<20 {
         
@@ -138,14 +144,13 @@ class NewsViewController: UITableViewController {
                     news.url = url
                 }
                 
-                newsArray.append(news)
+                array.append(news)
             }
             else {
                 print("Fetch failed")
             }
+            newsArray = array
             newsTable.reloadData()
-            //Dismiss progress message
-            SVProgressHUD.dismiss()
         }
      
     }

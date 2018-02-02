@@ -468,15 +468,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewsCell" textLabel="UNi-Cd-F0A" detailTextLabel="pDd-JK-mOH" imageView="6BU-YI-Yab" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="Qi6-jM-sgo">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewsCell" textLabel="UNi-Cd-F0A" detailTextLabel="pDd-JK-mOH" imageView="6BU-YI-Yab" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="Qi6-jM-sgo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qi6-jM-sgo" id="C2J-Mz-GOL">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UNi-Cd-F0A">
-                                            <rect key="frame" x="63" y="3" width="277" height="43"/>
+                                            <rect key="frame" x="95" y="8" width="237.5" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <string key="text">Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title </string>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -484,14 +484,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pDd-JK-mOH">
-                                            <rect key="frame" x="63" y="49" width="43" height="14.5"/>
+                                            <rect key="frame" x="95" y="54" width="43" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="News" id="6BU-YI-Yab">
-                                            <rect key="frame" x="16" y="18" width="32" height="32"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="newsImage" id="6BU-YI-Yab">
+                                            <rect key="frame" x="16" y="7" width="64" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -518,54 +518,72 @@
             <objects>
                 <viewController id="ljE-el-z1D" customClass="NewsDetailViewController" customModule="Le_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G7w-T3-5Lv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UCm-BM-aX1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVr-NV-1fE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="554"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="589-hw-WKa" userLabel="newsTitle">
-                                                <rect key="frame" x="10" y="10" width="354" height="113.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="589-hw-WKa" userLabel="newsTitle">
+                                                <rect key="frame" x="20" y="10" width="334" height="61.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-tr-UJX" userLabel="newsDesc">
-                                                <rect key="frame" x="10" y="133.5" width="354" height="79.5"/>
-                                                <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label </string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-tr-UJX" userLabel="newsDesc">
+                                                <rect key="frame" x="20" y="81.5" width="334" height="199.5"/>
+                                                <string key="text">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published at: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QtG-gX-LI8" userLabel="pDate">
-                                                <rect key="frame" x="10" y="223" width="354" height="19"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="16"/>
+                                                <rect key="frame" x="20" y="291" width="334" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0M-yy-N1N" userLabel="source">
-                                                <rect key="frame" x="10" y="242" width="354" height="19"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="16"/>
+                                                <rect key="frame" x="20" y="311.5" width="334" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivc-6U-7qF">
+                                                <rect key="frame" x="115.5" y="352" width="143" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title=" Read Full Story ">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="viewDetails:" destination="ljE-el-z1D" eventType="touchUpInside" id="mxz-kZ-a5F"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="Ex6-tr-UJX" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="DoM-ct-fcO"/>
+                                            <constraint firstItem="Ex6-tr-UJX" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="20" id="DoM-ct-fcO"/>
                                             <constraint firstItem="QtG-gX-LI8" firstAttribute="top" secondItem="Ex6-tr-UJX" secondAttribute="bottom" constant="10" id="F2b-LV-Me0"/>
-                                            <constraint firstItem="w0M-yy-N1N" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="JEF-sZ-xOu"/>
-                                            <constraint firstItem="589-hw-WKa" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="MNP-PQ-m8M"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ex6-tr-UJX" secondAttribute="trailing" constant="10" id="MOA-l2-WsH"/>
-                                            <constraint firstAttribute="trailing" secondItem="589-hw-WKa" secondAttribute="trailing" constant="10" id="ObV-7b-EZ4"/>
-                                            <constraint firstAttribute="trailing" secondItem="QtG-gX-LI8" secondAttribute="trailing" constant="10" id="ZI0-oL-siP"/>
+                                            <constraint firstItem="w0M-yy-N1N" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="20" id="JEF-sZ-xOu"/>
+                                            <constraint firstItem="589-hw-WKa" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="20" id="MNP-PQ-m8M"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ex6-tr-UJX" secondAttribute="trailing" constant="20" id="MOA-l2-WsH"/>
+                                            <constraint firstItem="Ivc-6U-7qF" firstAttribute="centerX" secondItem="GVr-NV-1fE" secondAttribute="centerX" id="MxK-yH-Ux4"/>
+                                            <constraint firstAttribute="trailing" secondItem="589-hw-WKa" secondAttribute="trailing" constant="20" id="ObV-7b-EZ4"/>
+                                            <constraint firstAttribute="trailing" secondItem="QtG-gX-LI8" secondAttribute="trailing" constant="20" id="ZI0-oL-siP"/>
                                             <constraint firstItem="Ex6-tr-UJX" firstAttribute="top" secondItem="589-hw-WKa" secondAttribute="bottom" constant="10" id="adT-Lp-CMY"/>
-                                            <constraint firstAttribute="trailing" secondItem="w0M-yy-N1N" secondAttribute="trailing" constant="10" id="b5i-hZ-772"/>
-                                            <constraint firstItem="QtG-gX-LI8" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="10" id="hcW-iW-xuI"/>
+                                            <constraint firstAttribute="trailing" secondItem="w0M-yy-N1N" secondAttribute="trailing" constant="20" id="b5i-hZ-772"/>
+                                            <constraint firstItem="QtG-gX-LI8" firstAttribute="leading" secondItem="GVr-NV-1fE" secondAttribute="leading" constant="20" id="hcW-iW-xuI"/>
                                             <constraint firstItem="589-hw-WKa" firstAttribute="top" secondItem="GVr-NV-1fE" secondAttribute="top" constant="10" id="ijF-r1-j7L"/>
+                                            <constraint firstItem="Ivc-6U-7qF" firstAttribute="top" secondItem="w0M-yy-N1N" secondAttribute="bottom" constant="20" id="mUm-SD-qk8"/>
                                             <constraint firstItem="w0M-yy-N1N" firstAttribute="top" secondItem="QtG-gX-LI8" secondAttribute="bottom" id="yKh-oB-pAi"/>
                                         </constraints>
                                     </view>
@@ -589,6 +607,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mYW-16-8Pn"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="newsDesc" destination="Ex6-tr-UJX" id="yBC-Ix-ll3"/>
                         <outlet property="newsTitle" destination="589-hw-WKa" id="3xy-W0-DWm"/>
@@ -874,6 +893,7 @@
         <image name="News" width="32" height="32"/>
         <image name="eventIcon" width="32" height="32"/>
         <image name="homeIcon" width="32" height="32"/>
+        <image name="newsImage" width="64" height="64"/>
         <image name="notepadIcon" width="32" height="32"/>
         <image name="sunny" width="512" height="512"/>
     </resources>
