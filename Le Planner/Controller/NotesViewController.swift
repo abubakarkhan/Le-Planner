@@ -85,6 +85,8 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
         
         alert.addAction(UIAlertAction(title: "Dimiss", style: UIAlertActionStyle.default, handler: nil))
         
+        Sound.play(file: "tapSound.wav")
+        
         self.present(alert, animated: true, completion: nil)
     }
     

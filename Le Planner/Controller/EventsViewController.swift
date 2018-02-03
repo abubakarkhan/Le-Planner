@@ -109,6 +109,8 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
         
         alert.addAction(UIAlertAction(title: "Dimiss", style: UIAlertActionStyle.default, handler: nil))
         
+        Sound.play(file: "tapSound.wav")
+        
         self.present(alert, animated: true, completion: nil)
     }
     
