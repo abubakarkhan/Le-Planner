@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftySound
 
 class EventsViewController: UIViewController {
     
@@ -84,8 +85,8 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
             self.context.delete(self.eventArray[indexPath.row])
             self.eventArray.remove(at: indexPath.row)
             self.saveEvents()
+            Sound.play(file: "deleteSound.wav")
         }
-        
         return [deleteAction]
     }
     

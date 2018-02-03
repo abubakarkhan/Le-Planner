@@ -25,6 +25,9 @@
 		007914B12022A36B00D7D609 /* NewsDataTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914B02022A36B00D7D609 /* NewsDataTemplate.swift */; };
 		007914B32022B30100D7D609 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914B22022B30100D7D609 /* NewsViewController.swift */; };
 		007914B520240C3D00D7D609 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914B420240C3D00D7D609 /* NewsDetailViewController.swift */; };
+		007914BA20258DE300D7D609 /* refreshSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 007914B720258DE200D7D609 /* refreshSound.wav */; };
+		007914BB20258DE300D7D609 /* deleteSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 007914B820258DE200D7D609 /* deleteSound.wav */; };
+		007914BC20258DE300D7D609 /* errorSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 007914B920258DE200D7D609 /* errorSound.wav */; };
 		87A60475009D77146E38CA26 /* Pods_Le_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */; };
 		F181243389C6555FDE436399 /* Pods_Le_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +65,9 @@
 		007914B02022A36B00D7D609 /* NewsDataTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataTemplate.swift; sourceTree = "<group>"; };
 		007914B22022B30100D7D609 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		007914B420240C3D00D7D609 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		007914B720258DE200D7D609 /* refreshSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refreshSound.wav; sourceTree = "<group>"; };
+		007914B820258DE200D7D609 /* deleteSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = deleteSound.wav; sourceTree = "<group>"; };
+		007914B920258DE200D7D609 /* errorSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = errorSound.wav; sourceTree = "<group>"; };
 		0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCE2EC6FBDC1A0368BCFB3F /* Pods-Le PlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Le PlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Le PlannerUITests/Pods-Le PlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_PlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +135,7 @@
 		001417DF20158F3000B5055F /* Le Planner */ = {
 			isa = PBXGroup;
 			children = (
+				007914B620258DA900D7D609 /* Supporting Files */,
 				000F005A2016BC5700EF9453 /* Controller */,
 				001417F72015ECF400B5055F /* Model */,
 				001417F42015E90600B5055F /* View */,
@@ -174,6 +181,16 @@
 				004A7BF620189529009CD092 /* Info.plist */,
 			);
 			path = "Le PlannerUITests";
+			sourceTree = "<group>";
+		};
+		007914B620258DA900D7D609 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				007914B820258DE200D7D609 /* deleteSound.wav */,
+				007914B920258DE200D7D609 /* errorSound.wav */,
+				007914B720258DE200D7D609 /* refreshSound.wav */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5A40EA86C8FEF06EDB7D7982 /* Frameworks */ = {
@@ -285,9 +302,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007914BA20258DE300D7D609 /* refreshSound.wav in Resources */,
 				000F00592016B90F00EF9453 /* LaunchScreen.storyboard in Resources */,
 				001417EA20158F3000B5055F /* Assets.xcassets in Resources */,
+				007914BC20258DE300D7D609 /* errorSound.wav in Resources */,
 				001417E820158F3000B5055F /* Main.storyboard in Resources */,
+				007914BB20258DE300D7D609 /* deleteSound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,12 +412,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

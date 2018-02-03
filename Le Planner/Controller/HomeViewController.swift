@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import SwiftySound
 import SVProgressHUD
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
@@ -54,6 +55,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @objc func refreshData(){
         fetchWeatherANdQutoe()
         refresher.endRefreshing()
+        Sound.play(file: "refreshSound.wav")
     }
     
     //MARK - Location and quote setup

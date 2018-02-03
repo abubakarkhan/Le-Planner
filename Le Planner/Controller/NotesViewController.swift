@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftySound
 
 class NotesViewController: UIViewController {
     
@@ -92,8 +93,8 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
             self.context.delete(self.noteArray[indexPath.row])
             self.noteArray.remove(at: indexPath.row)
             self.saveNotes()
+            Sound.play(file: "deleteSound.wav")
         }
-        
         return [deleteAction]
     }
     

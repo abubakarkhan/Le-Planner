@@ -7,6 +7,7 @@ target 'Le Planner' do
   # Pods for Le Planner
 
     pod 'SwiftyJSON'
+    pod 'SwiftySound'
     pod 'Alamofire'
     pod 'SVProgressHUD', :inhibit_warnings => true
 

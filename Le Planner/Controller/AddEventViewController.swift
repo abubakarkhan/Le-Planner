@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftySound
 
 class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -82,6 +83,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Default action"), style: .`default`, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        Sound.play(file: "errorSound.wav")
     }
     
     func eventAddedAlert(){

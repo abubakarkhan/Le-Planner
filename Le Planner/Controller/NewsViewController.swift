@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SwiftySound
 import SVProgressHUD
 
 class NewsViewController: UITableViewController {
@@ -47,6 +48,7 @@ class NewsViewController: UITableViewController {
         let params : [String : String] = ["apiKey" : apiKey, "country" : "us"]
         getNewsData(url: newsUrl, parameters: params)
         refresher.endRefreshing()
+        Sound.play(file: "refreshSound.wav")
     }
     
     // MARK: - Table view data source

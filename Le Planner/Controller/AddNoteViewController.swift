@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftySound
 
 class AddNoteViewController: UIViewController {
     
@@ -40,6 +41,7 @@ class AddNoteViewController: UIViewController {
                                                                comment: "Default action"), style: .`default`, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+        Sound.play(file: "errorSound.wav")
     }
     
     func newNoteAddedAlert(){

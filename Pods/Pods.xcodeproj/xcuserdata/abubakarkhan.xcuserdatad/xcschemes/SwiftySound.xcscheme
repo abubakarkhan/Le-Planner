@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B1C90F5B3DDA9A2B37984E5804D2905B"
-               BuildableName = "Pods_Le_Planner.framework"
-               BlueprintName = "Pods-Le Planner"
+               BlueprintIdentifier = "E7E2F5D4B2F3B3C09B3D5C31EEB4A4BD"
+               BuildableName = "SwiftySound.framework"
+               BlueprintName = "SwiftySound"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B1C90F5B3DDA9A2B37984E5804D2905B"
-            BuildableName = "Pods_Le_Planner.framework"
-            BlueprintName = "Pods-Le Planner"
+            BlueprintIdentifier = "E7E2F5D4B2F3B3C09B3D5C31EEB4A4BD"
+            BuildableName = "SwiftySound.framework"
+            BlueprintName = "SwiftySound"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
