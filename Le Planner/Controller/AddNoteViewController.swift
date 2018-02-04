@@ -15,7 +15,7 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var noteTitleField: UITextField!
     @IBOutlet weak var noteDetailField: UITextView!
     
-    var noteArray = [Note]()
+    var delegate : AddNoteProtocol?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -46,7 +46,12 @@ class AddNoteViewController: UIViewController {
     
     func newNoteAddedAlert(){
         //add note if fields no blank
-        addNote(title: noteTitleField.text!, body: noteDetailField.text!)
+        let newNote = Note(context: context)
+        newNote.title = noteTitleField.text!
+        newNote.body = noteDetailField.text!
+        
+        //Delegate
+        delegate?.newNoteData(data: newNote)
         
         //Build alert for note added
         let alert = UIAlertController(title: "Note Added",
@@ -59,27 +64,10 @@ class AddNoteViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func addNote(title: String, body: String){
-        let newNote = Note(context: context)
-        newNote.title = title
-        newNote.body = body
-        
-        noteArray.append(newNote)
-        saveNote()
-    }
-    
-    func saveNote(){
-        do{
-            try context.save()
-        }catch {
-            print("Error saving new note: \(error)")
-        }
-    }
-    
+
     func navigateToPreviousScreen(){
         //navigate back to event list
         navigationController?.popViewController(animated: true)
-        
         dismiss(animated: true, completion: nil)
     }
 }

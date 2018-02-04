@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import SwiftySound
 
-class NotesViewController: UIViewController {
+class NotesViewController: UIViewController, AddNoteProtocol {
     
     @IBOutlet weak var notesTableView: UITableView!
     
@@ -28,6 +28,29 @@ class NotesViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         loadNotes()
     }
+    
+    //New note protocol
+    func newNoteData(data: Note) {
+        noteArray.append(data)
+        saveNotes()
+    }
+    
+    //Add note pressed
+    @IBAction func addNote(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddNoteSegue", sender: self)
+    }
+    
+    //Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AddNoteSegue" {
+            
+            let addNoteVC = segue.destination as! AddNoteViewController
+            
+            addNoteVC.delegate = self
+        }
+    }
+    
     //MARK: - Save notes data
     func saveNotes(){
         

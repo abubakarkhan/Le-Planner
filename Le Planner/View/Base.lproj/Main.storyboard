@@ -726,7 +726,8 @@
                     <navigationItem key="navigationItem" title="Notes" id="r5a-QT-cgM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ytP-jA-LVY">
                             <connections>
-                                <segue destination="vEG-sL-cdM" kind="show" id="oAz-il-VyR"/>
+                                <action selector="addNote:" destination="Im6-Or-cjO" id="UGa-Iq-4Bh"/>
+                                <segue destination="vEG-sL-cdM" kind="show" identifier="AddNoteSegue" id="oAz-il-VyR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
