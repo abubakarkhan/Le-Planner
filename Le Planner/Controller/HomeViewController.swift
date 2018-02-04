@@ -200,12 +200,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateUIEventSection(events: [Event]) {
-        var summaryText = ""
-        if events.count == 0 {
-            summaryText = "No Pending Events For the day"
-        }
-        else {
+        var summaryText = "No Pending Events For the day"
+        //Update Label: No events added
+        if events.count != 0  {
+            
+            summaryText = ""
+            
             for i in events {
+            
                 let eventDate = Date(timeIntervalSince1970: i.date)
                 let calendar = NSCalendar.current
                 
@@ -215,7 +217,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
             }
+            
+            //Update label: No events for today
+            if summaryText.isEmpty {
+                summaryText = "No Pending Events For the day"
+            }
         }
+        
+        
         eventSummary.text = summaryText
     }
     
