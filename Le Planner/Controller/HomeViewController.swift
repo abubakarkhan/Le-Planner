@@ -85,7 +85,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: - Check for pending events for the day
-    func checkForEvents(){
+    private func checkForEvents(){
         var eventArray = [Event]()
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request : NSFetchRequest<Event> = Event.fetchRequest()
@@ -199,7 +199,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         weatherImage.image = UIImage(named: weatherDataModel.weatherIconName)
     }
     
-    func updateUIEventSection(events: [Event]) {
+    private func updateUIEventSection(events: [Event]) {
         var summaryText = "No Pending Events For the day"
         //Update Label: No events added
         if events.count != 0  {
