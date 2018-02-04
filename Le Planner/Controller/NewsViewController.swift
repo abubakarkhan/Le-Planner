@@ -74,6 +74,8 @@ class NewsViewController: UITableViewController {
         let selectedNews = newsArray[indexPath.row]
         
         self.performSegue(withIdentifier: "NewsToDetail", sender: selectedNews)
+        
+        Sound.play(file: "tapSound.wav")
     }
     
     //Prepare for segue

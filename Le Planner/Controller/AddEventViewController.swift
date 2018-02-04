@@ -95,6 +95,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
             self.navigateToPreviousScreen()
         }))
+        Sound.play(file: "addedSound.wav")
         self.present(alert, animated: true, completion: nil)
     }
     
