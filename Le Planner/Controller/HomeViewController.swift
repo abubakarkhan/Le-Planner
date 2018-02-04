@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 import SwiftySound
 import SVProgressHUD
+import CoreData
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -24,19 +25,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    //Weather Section views
     @IBOutlet weak var tempratureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherTypeLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
-    
+    //Quote section views
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var quoteAuthorLabel: UILabel!
+    //Event section views
+    @IBOutlet weak var eventSummary: UITextView!
+    
     
     //Instance varialbes
     private let locationManager = CLLocationManager()
     private let weatherDataModel = WeatherDataTemplate()
     private let quoteData = QuoteDataTemplate()
     private var refresher : UIRefreshControl!
+    
     
     
     override func viewDidLoad() {
@@ -51,6 +57,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         //Fetch Data
         fetchWeatherANdQutoe()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        checkForEvents()
+    }
+    
     //MARK: - Pull to refresh
     @objc func refreshData(){
         fetchWeatherANdQutoe()
@@ -72,6 +82,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         //Fire quote of the day API Request and update UI
         getQuoteData(url: QUOTE_URL)
+    }
+    
+    //MARK: - Check for pending events for the day
+    func checkForEvents(){
+        var eventArray = [Event]()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request : NSFetchRequest<Event> = Event.fetchRequest()
+        
+        do {
+            eventArray = try context.fetch(request)
+        } catch {
+            print("Error loading events: \(error)")
+        }
+        
+        updateUIEventSection(events: eventArray)
     }
     
     //MARK: - Netwroking
@@ -173,6 +198,27 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         tempratureLabel.text = String(weatherDataModel.temprature) + "°C"
         weatherImage.image = UIImage(named: weatherDataModel.weatherIconName)
     }
+    
+    func updateUIEventSection(events: [Event]) {
+        var summaryText = ""
+        if events.count == 0 {
+            summaryText = "No Pending Events For the day"
+        }
+        else {
+            for i in events {
+                let eventDate = Date(timeIntervalSince1970: i.date)
+                let calendar = NSCalendar.current
+                
+                if calendar.isDateInToday(eventDate) {
+                    summaryText.append("Event: \(i.title!)")
+                    summaryText.append("\nDate:  \(eventDate) \n\n")
+                }
+                
+            }
+        }
+        eventSummary.text = summaryText
+    }
+    
     
     //MARK: - Location Manager
     /*********************************************************/

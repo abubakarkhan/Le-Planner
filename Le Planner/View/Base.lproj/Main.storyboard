@@ -104,12 +104,12 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYx-bh-QGC" userLabel="Quote Widget">
-                                                        <rect key="frame" x="0.0" y="175" width="375" height="100"/>
+                                                        <rect key="frame" x="0.0" y="175" width="375" height="130"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="pfZ-sW-0hV">
-                                                                <rect key="frame" x="10" y="5" width="355" height="64"/>
+                                                                <rect key="frame" x="10" y="5" width="355" height="76"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="2Bk-V1-Xqa"/>
+                                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="2Bk-V1-Xqa"/>
                                                                 </constraints>
                                                                 <string key="text">Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.</string>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
@@ -117,7 +117,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Brian W. Kernighan" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-0w-bSp">
-                                                                <rect key="frame" x="10" y="74" width="355" height="21"/>
+                                                                <rect key="frame" x="10" y="86" width="355" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="cPq-KE-q2c"/>
                                                                 </constraints>
@@ -135,21 +135,52 @@
                                                             <constraint firstItem="FmS-0w-bSp" firstAttribute="top" secondItem="pfZ-sW-0hV" secondAttribute="bottom" constant="5" id="baU-0b-zhg"/>
                                                             <constraint firstItem="pfZ-sW-0hV" firstAttribute="top" secondItem="kYx-bh-QGC" secondAttribute="top" constant="5" id="gOY-00-IqI"/>
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FmS-0w-bSp" secondAttribute="bottom" constant="5" id="vLc-9M-ZZT"/>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="xLl-hz-I21"/>
+                                                            <constraint firstAttribute="height" constant="130" id="xLl-hz-I21"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v84-Lx-4Ah" userLabel="Events Heading">
+                                                        <rect key="frame" x="0.0" y="305" width="375" height="25"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending events for the day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xez-Mb-RQ0">
+                                                                <rect key="frame" x="10" y="0.0" width="355" height="25"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="Grb-2k-MQg"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BTn-3h-CXL" userLabel="Summary">
+                                                        <rect key="frame" x="10" y="335" width="355" height="214"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="CZW-G9-0bd" secondAttribute="trailing" id="16f-ed-gVY"/>
                                                     <constraint firstAttribute="trailing" secondItem="kYx-bh-QGC" secondAttribute="trailing" id="3ju-ZP-lxa"/>
+                                                    <constraint firstItem="BTn-3h-CXL" firstAttribute="leading" secondItem="2cz-vB-V6l" secondAttribute="leading" constant="10" id="KM7-L4-4B0"/>
+                                                    <constraint firstItem="v84-Lx-4Ah" firstAttribute="top" secondItem="kYx-bh-QGC" secondAttribute="bottom" id="LGu-3w-H3K"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BTn-3h-CXL" secondAttribute="trailing" constant="10" id="Lbh-oh-wMo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="BTn-3h-CXL" secondAttribute="bottom" constant="5" id="LeR-eX-j6d"/>
                                                     <constraint firstItem="9yD-yV-ZfG" firstAttribute="leading" secondItem="2cz-vB-V6l" secondAttribute="leading" id="McK-Ev-0Rk"/>
                                                     <constraint firstItem="9yD-yV-ZfG" firstAttribute="top" secondItem="CZW-G9-0bd" secondAttribute="bottom" id="NIl-g0-zcL"/>
                                                     <constraint firstItem="CZW-G9-0bd" firstAttribute="leading" secondItem="2cz-vB-V6l" secondAttribute="leading" id="SPf-bp-Y6C"/>
                                                     <constraint firstItem="kYx-bh-QGC" firstAttribute="leading" secondItem="2cz-vB-V6l" secondAttribute="leading" id="TjJ-J3-QER"/>
                                                     <constraint firstItem="kYx-bh-QGC" firstAttribute="top" secondItem="9yD-yV-ZfG" secondAttribute="bottom" id="Ygq-fl-L5G"/>
+                                                    <constraint firstItem="BTn-3h-CXL" firstAttribute="top" secondItem="v84-Lx-4Ah" secondAttribute="bottom" constant="5" id="a4T-hZ-Jcg"/>
                                                     <constraint firstAttribute="trailing" secondItem="9yD-yV-ZfG" secondAttribute="trailing" id="a6B-O9-7zd"/>
+                                                    <constraint firstItem="v84-Lx-4Ah" firstAttribute="leading" secondItem="2cz-vB-V6l" secondAttribute="leading" id="a8G-4Y-4Px"/>
                                                     <constraint firstItem="CZW-G9-0bd" firstAttribute="top" secondItem="2cz-vB-V6l" secondAttribute="top" id="b25-rT-iaU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="v84-Lx-4Ah" secondAttribute="trailing" id="pqd-Kx-4Oo"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -185,6 +216,7 @@
                     <navigationItem key="navigationItem" title="Plan Your Day" id="ark-Yk-Egv"/>
                     <connections>
                         <outlet property="cityLabel" destination="1X6-uK-wrx" id="0V6-cu-8cM"/>
+                        <outlet property="eventSummary" destination="BTn-3h-CXL" id="Ua9-lW-fI5"/>
                         <outlet property="quoteAuthorLabel" destination="FmS-0w-bSp" id="JVL-A1-jea"/>
                         <outlet property="quoteLabel" destination="pfZ-sW-0hV" id="zvX-RD-hVm"/>
                         <outlet property="scrollView" destination="r9C-20-XbQ" id="S9F-PG-63p"/>
