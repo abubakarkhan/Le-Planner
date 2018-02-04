@@ -17,7 +17,7 @@ class AddNoteViewController: UIViewController {
     
     var delegate : AddNoteProtocol?
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class AddNoteViewController: UIViewController {
         }    
     }
     
-    func noteNotAddedAlert(){
+    private func noteNotAddedAlert(){
         let alert = UIAlertController(title: "Failed",
                                       message: "Your note was not added \nPlease fill in empty fields",
                                       preferredStyle: .alert)
@@ -44,7 +44,7 @@ class AddNoteViewController: UIViewController {
         Sound.play(file: "errorSound.wav")
     }
     
-    func newNoteAddedAlert(){
+    private func newNoteAddedAlert(){
         //add note
         let newNote = Note(context: context)
         newNote.title = noteTitleField.text!
@@ -65,7 +65,7 @@ class AddNoteViewController: UIViewController {
     }
     
 
-    func navigateToPreviousScreen(){
+    private func navigateToPreviousScreen(){
         //navigate back to event list
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)

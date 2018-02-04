@@ -53,7 +53,7 @@ class EventsViewController: UIViewController, AddEventProtocol {
     
     
     //MARK: - Save events data
-    func saveEvents(){
+    private func saveEvents(){
         
         do {
             try context.save()
@@ -65,7 +65,7 @@ class EventsViewController: UIViewController, AddEventProtocol {
         
     }
     //MARK: - Load events data
-    func loadEvents(){
+    private func loadEvents(){
         
         let request : NSFetchRequest<Event> = Event.fetchRequest()
         

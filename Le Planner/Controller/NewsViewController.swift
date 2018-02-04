@@ -15,15 +15,15 @@ import SVProgressHUD
 class NewsViewController: UITableViewController {
 
     //News api details
-    let newsUrl = "https://newsapi.org/v2/top-headlines"
-    let apiKey = "9d4c925408fb461ca65c2de49762c1c4"
+    private let newsUrl = "https://newsapi.org/v2/top-headlines"
+    private let apiKey = "9d4c925408fb461ca65c2de49762c1c4"
     
     
     @IBOutlet var newsTable: UITableView!
     
-    var newsArray = [NewsDataTemplate]()
-    var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView()
-    var refresher : UIRefreshControl!
+    private var newsArray = [NewsDataTemplate]()
+    private var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView()
+    private var refresher : UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +88,7 @@ class NewsViewController: UITableViewController {
     //MARK: - Netwroking
     /*********************************************************/
     
-    func getNewsData(url: String, parameters: [String : String]) {
+    private func getNewsData(url: String, parameters: [String : String]) {
         //Progress message
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
         SVProgressHUD.show(withStatus: "Fetching latest headlines")
@@ -116,7 +116,7 @@ class NewsViewController: UITableViewController {
     //MARK: - JSON Parsing
     /*********************************************************/
     
-    func updateNews(json: JSON) {
+    private func updateNews(json: JSON) {
         
         var array = [NewsDataTemplate]()
         

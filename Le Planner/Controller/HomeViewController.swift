@@ -16,11 +16,11 @@ import SVProgressHUD
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     //Weather API details
-    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "1ce0c41977d7850542e8079cb3a54f92"
+    private let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
+    private let APP_ID = "1ce0c41977d7850542e8079cb3a54f92"
     
     //Quote of the day api details
-    let QUOTE_URL = "https://quotes.rest/qod"
+    private let QUOTE_URL = "https://quotes.rest/qod"
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -33,10 +33,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var quoteAuthorLabel: UILabel!
     
     //Instance varialbes
-    let locationManager = CLLocationManager()
-    let weatherDataModel = WeatherDataTemplate()
-    let quoteData = QuoteDataTemplate()
-    var refresher : UIRefreshControl!
+    private let locationManager = CLLocationManager()
+    private let weatherDataModel = WeatherDataTemplate()
+    private let quoteData = QuoteDataTemplate()
+    private var refresher : UIRefreshControl!
     
     
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK - Location and quote setup
-    func fetchWeatherANdQutoe(){
+    private func fetchWeatherANdQutoe(){
         //Progress message
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
         SVProgressHUD.show(withStatus: "Updating Widgets")
@@ -77,7 +77,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - Netwroking
     /*********************************************************/
     
-    func getWeatherData(url: String, parameters: [String : String]){
+    private func getWeatherData(url: String, parameters: [String : String]){
         
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
@@ -96,13 +96,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 self.weatherTypeLabel.text = "Connection Issues"
                 self.cityLabel.text = ""
                 self.tempratureLabel.text = ""
+                
                 //Dismiss progress message
                 SVProgressHUD.dismiss()
             }
         }
     }
     
-    func getQuoteData(url: String){
+    private func getQuoteData(url: String){
         
         Alamofire.request(url).responseJSON {
             response in
@@ -125,7 +126,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - JSON Parsing
     /*********************************************************/
     
-    func updateQuote(json: JSON){
+    private func updateQuote(json: JSON){
         if let quoteOfTheDay = json["contents"]["quotes"][0]["quote"].string {
             
             quoteData.quoteText = quoteOfTheDay
@@ -139,7 +140,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func updateWeather(json: JSON){
+    private func updateWeather(json: JSON){
         if let temprature = json["main"]["temp"].double {
             
             //convert from kelvin to celcius
@@ -161,12 +162,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - UI Changes
     /*********************************************************/
     
-    func updateUIForQuoteChanges(){
+    private func updateUIForQuoteChanges(){
         quoteLabel.text = quoteData.quoteText
         quoteAuthorLabel.text = quoteData.author
     }
     
-    func updateUIForWeatherChanges(){
+    private func updateUIForWeatherChanges(){
         cityLabel.text = weatherDataModel.city
         weatherTypeLabel.text = "Conditions: \(weatherDataModel.weatherType)"
         tempratureLabel.text = String(weatherDataModel.temprature) + "°C"
@@ -198,7 +199,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     //Failed to update location
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
-        cityLabel.text = "Location Unavailable, check permissions"
+        
+        weatherTypeLabel.text = "Check permissions"
+        cityLabel.text = ""
+        tempratureLabel.text = "Location Unavailable"
+        
+        
+        //Dismiss progress message
+        SVProgressHUD.dismiss()
     }
 }
 

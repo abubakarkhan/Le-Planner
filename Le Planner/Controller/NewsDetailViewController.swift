@@ -24,7 +24,7 @@ class NewsDetailViewController: UIViewController {
         setUI()
     }
 
-    func setUI() {
+    private func setUI() {
         newsTitle.text = newsDetail?.title
         newsDesc.text = newsDetail?.description
         pDate.text = newsDetail?.publishedAt

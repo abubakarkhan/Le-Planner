@@ -14,9 +14,9 @@ class NotesViewController: UIViewController, AddNoteProtocol {
     
     @IBOutlet weak var notesTableView: UITableView!
     
-    var noteArray = [Note]()
+    private var noteArray = [Note]()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class NotesViewController: UIViewController, AddNoteProtocol {
     }
     
     //MARK: - Save notes data
-    func saveNotes(){
+    private func saveNotes(){
         
         do {
             try context.save()
@@ -63,7 +63,7 @@ class NotesViewController: UIViewController, AddNoteProtocol {
         
     }
     //MARK: - Load notes data
-    func loadNotes(){
+    private func loadNotes(){
         
         let request : NSFetchRequest<Note> = Note.fetchRequest()
         

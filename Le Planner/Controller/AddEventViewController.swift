@@ -17,10 +17,10 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var eventTypeTextFIeld: UITextField!
     
-    let arrayEventType = ["Exercise","Leisure","Meeting","Other","Study","Work"]
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let arrayEventType = ["Exercise","Leisure","Meeting","Other","Study","Work"]
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-    var eventDate : Double?
+    private var eventDate : Double?
     var delegate : AddEventProtocol?
     
     
@@ -75,7 +75,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     //MARKS: - Alerts
-    func eventNotAddedAlert(){
+    private func eventNotAddedAlert(){
         //Build alert for event not added
         let alert = UIAlertController(title: "Failed",
                                       message: "Your event was not added \nPlease fill in empty fields",
@@ -86,7 +86,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         Sound.play(file: "errorSound.wav")
     }
     
-    func eventAddedAlert(){
+    private func eventAddedAlert(){
         //Build alert for event added
         let alert = UIAlertController(title: "Event Added",
                                       message: "Your event was added",
@@ -98,9 +98,9 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.present(alert, animated: true, completion: nil)
     }
     
-    //MARK: - Adding events
-    func addNewEvent(){
-        //create new event object and add to array
+    //MARK: - Add event
+    private func addNewEvent(){
+        //create new event object from entered data
         let eventAdd = Event(context: context)
         
         eventAdd.title = titleField.text!
@@ -118,7 +118,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     
-    func verifyEventType() -> String{
+    private func verifyEventType() -> String{
         if arrayEventType.contains(eventTypeTextFIeld.text!) {
             return eventTypeTextFIeld.text!
         } else {
@@ -127,7 +127,7 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     
-    func navigateToPreviousScreen(){
+   private func navigateToPreviousScreen(){
         //navigate back to event list
         navigationController?.popViewController(animated: true)
         
