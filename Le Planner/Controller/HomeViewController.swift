@@ -200,7 +200,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func updateUIEventSection(events: [Event]) {
-        var summaryText = "No Pending Events For the day"
+        var summaryText = "No pending events for the day"
         //Update Label: No events added
         if events.count != 0  {
             
