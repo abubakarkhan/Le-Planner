@@ -17,7 +17,7 @@ class NewsViewController: UITableViewController {
     //News api details
     private let newsUrl = "https://newsapi.org/v2/top-headlines"
     private let apiKey = "9d4c925408fb461ca65c2de49762c1c4"
-    
+    private var country =  "us"
     
     @IBOutlet var newsTable: UITableView!
     
@@ -39,14 +39,12 @@ class NewsViewController: UITableViewController {
         refresher.addTarget(self, action: #selector(HomeViewController.refreshData), for: UIControlEvents.valueChanged)
         newsTable.addSubview(refresher)
         
-        let params : [String : String] = ["apiKey" : apiKey, "country" : "us"]
-        getNewsData(url: newsUrl, parameters: params)
+        getNewsData(url: newsUrl)
         
     }
     //MARK - Pull to refresh
     @objc func refreshData(){
-        let params : [String : String] = ["apiKey" : apiKey, "country" : "us"]
-        getNewsData(url: newsUrl, parameters: params)
+        getNewsData(url: newsUrl)
         refresher.endRefreshing()
         Sound.play(file: "refreshSound.wav")
     }
@@ -86,16 +84,49 @@ class NewsViewController: UITableViewController {
         }
     }
     
+    //Serach with new paramteres
+    @IBAction func updateSearch(_ sender: UIBarButtonItem) {
+        
+        Sound.play(file: "tapSound.wav")
+        
+        let alertController = UIAlertController(title: "Upadte Country",
+                                                message: "Please enter country initials from follwing format.\n"
+                                                    + "\nUS, AU, FR, JP, IN, NZ\n",
+                                                preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+            if let field = alertController.textFields?[0] {
+                self.country = field.text!
+                self.getNewsData(url: self.newsUrl)
+                self.title = "Headlines - \(self.country)"
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Email"
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+    }
+    
     
     //MARK: - Netwroking
     /*********************************************************/
     
-    private func getNewsData(url: String, parameters: [String : String]) {
+    private func getNewsData(url: String) {
+        let params : [String : String] = ["apiKey" : apiKey, "country" : country]
         //Progress message
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)
         SVProgressHUD.show(withStatus: "Fetching latest headlines")
         
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+        Alamofire.request(url, method: .get, parameters: params).responseJSON {
             response in
             if response.result.isSuccess {
                 
@@ -111,14 +142,9 @@ class NewsViewController: UITableViewController {
                 //Dismiss progress message
                 SVProgressHUD.dismiss()
                 
-                //Build alert for event not added
-                let alert = UIAlertController(title: "Connection Problem",
-                                              message: "Please check that if the device is connected to the internet",
-                                              preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Default action"), style: .`default`, handler: nil))
-                Sound.play(file: "errorSound.wav")
-                self.present(alert, animated: true, completion: nil)                
+                self.buildAlert(title: "Connection Problem",
+                           body: "Please check that if the device is connected to the internet",
+                           button: "Dismiss")
             }
         }
     }
@@ -161,10 +187,23 @@ class NewsViewController: UITableViewController {
             }
             else {
                 print("Fetch failed")
+                
+                buildAlert(title: "Invalid", body: "Invalid serach parameters added", button: "Dismiss")
+                self.title = "Headlines"
             }
             newsArray = array
             newsTable.reloadData()
         }
-     
+    }
+    private func buildAlert(title: String, body: String, button: String) {
+        
+        //Build alert
+        let alert = UIAlertController(title: title,
+                                      message: body,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString(button, comment: "Default action"), style: .`default`, handler: nil))
+        Sound.play(file: "errorSound.wav")
+        self.present(alert, animated: true, completion: nil)
     }
 }

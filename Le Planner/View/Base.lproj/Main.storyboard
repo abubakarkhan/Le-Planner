@@ -492,7 +492,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--News Headlines-->
+        <!--Headlines-->
         <scene sceneID="aUe-tR-ctC">
             <objects>
                 <tableViewController id="4nK-CL-80v" customClass="NewsViewController" customModule="Le_Planner" customModuleProvider="target" sceneMemberID="viewController">
@@ -536,7 +536,13 @@
                             <outlet property="delegate" destination="4nK-CL-80v" id="rB1-KW-pUN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="News Headlines" id="BhF-j4-WsC"/>
+                    <navigationItem key="navigationItem" title="Headlines" id="BhF-j4-WsC">
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="Tmh-FR-gvX">
+                            <connections>
+                                <action selector="updateSearch:" destination="4nK-CL-80v" id="ung-sq-FPQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="newsTable" destination="zTY-9h-WpV" id="q9D-sb-c73"/>
                         <segue destination="ljE-el-z1D" kind="show" identifier="NewsToDetail" id="RPq-o9-5t7"/>
