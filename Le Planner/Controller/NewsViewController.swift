@@ -110,6 +110,15 @@ class NewsViewController: UITableViewController {
                 print("Error from api: \(String(describing: response.result.value))")
                 //Dismiss progress message
                 SVProgressHUD.dismiss()
+                
+                //Build alert for event not added
+                let alert = UIAlertController(title: "Connection Problem",
+                                              message: "Please check that if the device is connected to the internet",
+                                              preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Default action"), style: .`default`, handler: nil))
+                Sound.play(file: "errorSound.wav")
+                self.present(alert, animated: true, completion: nil)                
             }
         }
     }
