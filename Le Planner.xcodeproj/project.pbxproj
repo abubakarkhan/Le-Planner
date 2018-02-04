@@ -31,6 +31,7 @@
 		007914C12026BB1A00D7D609 /* AddNoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914C02026BB1A00D7D609 /* AddNoteProtocol.swift */; };
 		007914C32026C02600D7D609 /* AddEventProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007914C22026C02600D7D609 /* AddEventProtocol.swift */; };
 		007914CB2027079000D7D609 /* tapSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 007914C92027079000D7D609 /* tapSound.wav */; };
+		007914CD20271C6200D7D609 /* addedSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 007914CC20271C6200D7D609 /* addedSound.wav */; };
 		87A60475009D77146E38CA26 /* Pods_Le_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */; };
 		F181243389C6555FDE436399 /* Pods_Le_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		007914C02026BB1A00D7D609 /* AddNoteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteProtocol.swift; sourceTree = "<group>"; };
 		007914C22026C02600D7D609 /* AddEventProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventProtocol.swift; sourceTree = "<group>"; };
 		007914C92027079000D7D609 /* tapSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tapSound.wav; sourceTree = "<group>"; };
+		007914CC20271C6200D7D609 /* addedSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = addedSound.wav; path = ../../../../Assests/addedSound.wav; sourceTree = "<group>"; };
 		0F592DFB568B53A0EA26C64C /* Pods_Le_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCE2EC6FBDC1A0368BCFB3F /* Pods-Le PlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Le PlannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Le PlannerUITests/Pods-Le PlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		334F5DA6C993D7504F26839C /* Pods_Le_PlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Le_PlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 		007914B620258DA900D7D609 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				007914CC20271C6200D7D609 /* addedSound.wav */,
 				007914C92027079000D7D609 /* tapSound.wav */,
 				007914B820258DE200D7D609 /* deleteSound.wav */,
 				007914B920258DE200D7D609 /* errorSound.wav */,
@@ -324,6 +327,7 @@
 				001417EA20158F3000B5055F /* Assets.xcassets in Resources */,
 				007914BC20258DE300D7D609 /* errorSound.wav in Resources */,
 				001417E820158F3000B5055F /* Main.storyboard in Resources */,
+				007914CD20271C6200D7D609 /* addedSound.wav in Resources */,
 				007914CB2027079000D7D609 /* tapSound.wav in Resources */,
 				007914BB20258DE300D7D609 /* deleteSound.wav in Resources */,
 			);
