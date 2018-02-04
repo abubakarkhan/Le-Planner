@@ -89,8 +89,8 @@ class NewsViewController: UITableViewController {
         
         Sound.play(file: "tapSound.wav")
         
-        let alertController = UIAlertController(title: "Upadte Country",
-                                                message: "Please enter country initials from follwing format.\n"
+        let alertController = UIAlertController(title: "Update Country",
+                                                message: "Please enter country initials in the follwing format.\n"
                                                     + "\nUS, AU, FR, JP, IN, NZ\n",
                                                 preferredStyle: .alert)
         
