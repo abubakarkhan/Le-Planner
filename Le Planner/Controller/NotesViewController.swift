@@ -23,9 +23,8 @@ class NotesViewController: UIViewController, AddNoteProtocol {
         notesTableView.dataSource = self
         notesTableView.delegate = self
         notesTableView.tableFooterView = UIView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
+        //Load data
         loadNotes()
     }
     

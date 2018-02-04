@@ -45,7 +45,7 @@ class AddNoteViewController: UIViewController {
     }
     
     func newNoteAddedAlert(){
-        //add note if fields no blank
+        //add note
         let newNote = Note(context: context)
         newNote.title = noteTitleField.text!
         newNote.body = noteDetailField.text!

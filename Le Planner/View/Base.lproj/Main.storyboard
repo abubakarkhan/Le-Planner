@@ -287,7 +287,8 @@
                     <navigationItem key="navigationItem" title="Events" id="faY-sW-BAs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5au-gk-wgM">
                             <connections>
-                                <segue destination="JJH-3E-6Hd" kind="show" id="kN8-fs-C27"/>
+                                <action selector="addEvent:" destination="Szq-uH-yIH" id="Bfa-Ud-iaB"/>
+                                <segue destination="JJH-3E-6Hd" kind="show" identifier="AddEventSegue" id="kN8-fs-C27"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

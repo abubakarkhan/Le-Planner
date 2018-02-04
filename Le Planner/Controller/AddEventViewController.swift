@@ -19,9 +19,9 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     let arrayEventType = ["Exercise","Leisure","Meeting","Other","Study","Work"]
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var eventArray = [Event]()
+        
     var eventDate : Double?
+    var delegate : AddEventProtocol?
     
     
     override func viewDidLoad() {
@@ -114,17 +114,9 @@ class AddEventViewController: UIViewController, UIPickerViewDataSource, UIPicker
             eventAdd.date = eventDate!
         }
         
-        eventArray.append(eventAdd)
-        saveEvent()
+        delegate?.newEventData(data: eventAdd)
     }
     
-    func saveEvent(){
-        do{
-            try context.save()
-        }catch {
-            print("Error saving new event: \(error)")
-        }
-    }
     
     func verifyEventType() -> String{
         if arrayEventType.contains(eventTypeTextFIeld.text!) {

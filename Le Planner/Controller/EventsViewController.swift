@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import SwiftySound
 
-class EventsViewController: UIViewController {
+class EventsViewController: UIViewController, AddEventProtocol {
     
     @IBOutlet weak var eventsTableView: UITableView!
     
@@ -27,11 +27,30 @@ class EventsViewController: UIViewController {
         //hide separator for empty cell
         eventsTableView.tableFooterView = UIView()
         
+        //Load data
+        loadEvents()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        loadNotes()
+    //New event protocol
+    func newEventData(data: Event) {
+        eventArray.append(data)
+        saveEvents()
     }
+    //Add event button
+    @IBAction func addEvent(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddEventSegue", sender: self)
+    }
+    //Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddEventSegue" {
+            
+            let addEventVC = segue.destination as! AddEventViewController
+            
+            addEventVC.delegate = self
+            
+        }
+    }
+    
     
     //MARK: - Save events data
     func saveEvents(){
@@ -46,7 +65,7 @@ class EventsViewController: UIViewController {
         
     }
     //MARK: - Load events data
-    func loadNotes(){
+    func loadEvents(){
         
         let request : NSFetchRequest<Event> = Event.fetchRequest()
         
